@@ -8,7 +8,6 @@ import java.util.Date;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private String username;
 
@@ -40,6 +39,23 @@ public class User {
 
     @Column
     private String role;
+
+    public User() {
+    }
+
+    public User(String username, String password, String fullname, String male, String email, Date birthday, String address, String phone, String schoolyear, String department, String role) {
+        this.username = username;
+        this.password = password;
+        this.fullname = fullname;
+        this.male = male;
+        this.email = email;
+        this.birthday = birthday;
+        this.address = address;
+        this.phone = phone;
+        this.schoolyear = schoolyear;
+        this.department = department;
+        this.role = role;
+    }
 
     public String getUsername(){
         return username;
