@@ -17,7 +17,13 @@ public class LoginController extends HttpServlet {
     IUserService userService = new UserService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
+        String url = req.getRequestURL().toString();
+        if (url.contains("login")) {
+            req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
+        } else if (url.contains("logout")) {
+            SessionUtil.getInstance().removeValue(req, "USERMODEL");
+            resp.sendRedirect(req.getContextPath() + "/home");
+        }
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
