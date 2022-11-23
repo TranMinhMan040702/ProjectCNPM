@@ -1,6 +1,7 @@
 package controllers;
 
 
+import entity.User;
 import models.UserModel;
 import service.UserService;
 
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 @WebServlet(urlPatterns = {"/sinhvien/account", "/giangvien/account", "/truongbomon/account"})
 public class GetUserController extends HttpServlet {
@@ -20,7 +22,10 @@ public class GetUserController extends HttpServlet {
         String username = "20110677";
         UserService userService = new UserService();
         UserModel userModel = userService.getUser(username);
+        String date1;
+        date1 = new SimpleDateFormat("yyyy-MM-dd").format(userModel.getBirthday());
+        request.setAttribute("date1",date1);
         request.setAttribute("user", userModel);
-        request.getRequestDispatcher("account.jsp").forward(request, response);
+        request.getRequestDispatcher("/login").forward(request, response);
     }
 }

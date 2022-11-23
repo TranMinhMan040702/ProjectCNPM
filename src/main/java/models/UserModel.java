@@ -1,6 +1,8 @@
 package models;
 
 import javax.persistence.Column;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UserModel {
@@ -28,9 +30,7 @@ public class UserModel {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    public void setPassword(String password) {this.password = password;}
 
     public String getFullname() {
         return fullname;
