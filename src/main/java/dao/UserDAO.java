@@ -26,6 +26,27 @@ public class UserDAO implements IUserDAO{
         }
         return null;
     }
+
+    @Override
+    public void create(UserModel userModel) {
+        User user = new User();
+        Transaction transaction = null;
+        try(Session session = HibernateUtils.getSessionFactory().openSession()) {
+            BeanUtils.copyProperties(user, userModel);
+            transaction = session.beginTransaction();
+
+            session.save(user);
+
+            transaction.commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+    }
+
     public UserModel get(String username) {
         UserModel userModel = new UserModel();
         User user = null;
@@ -57,6 +78,4 @@ public class UserDAO implements IUserDAO{
             }
         }
     }
-
-
 }

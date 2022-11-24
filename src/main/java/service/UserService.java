@@ -23,6 +23,11 @@ public class UserService implements IUserService{
         return userDAO.get(username);
     }
 
+    @Override
+    public void create(UserModel userModel) {
+        userDAO.create(userModel);
+    }
+
     public static void main(String[] args) {
         String username = "20110677";
         UserService userService = new UserService();
