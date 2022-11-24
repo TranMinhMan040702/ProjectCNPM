@@ -9,21 +9,27 @@
 </head>
 <body>
 <div class="wrapper fadeInDown">
-    <div id="formContent">
-        <c:if test="${not empty message}">
-            <div class="alert alert-${altert}">
-                    ${message}
-            </div>
-        </c:if>
-        <!-- Login Form -->
-        <form action="<c:url value="/login"/>" method="post"
-              id="formLogin">
-            <input type="text" id="userName" class="fadeIn second" name="username" placeholder="Tên đăng nhập"/>
-            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Mật khẩu"/>
-            <input type="hidden" value="login" name="action"/>
-            <input type="submit" class="fadeIn fourth" value="Log in"/>
+        <form action="edit" method="get">
+        <table>
+            <tr>
+                <td>Day</td>
+                <td>Start</td>
+                <td>End</td>
+                <td>Date</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><select name="availableDay">
+                    <!--Listing days-->
+                </select></td>
+                <td><input type="time"   name="availableStart"/></td>
+                <td><input type="time"   name="availableEnd"/></td>
+                <td><input type="date"   name="availableDate"  value="${date1}"/></td>
+                <td><input type="submit" class="add" name="action" value="Add More" ></td>
+            </tr>
+        </table>
         </form>
-    </div>
+
 </div>
 </body>
 </html>
