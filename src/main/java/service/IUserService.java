@@ -7,4 +7,5 @@ import models.UserModel;
 public interface IUserService {
     LoginModel login(String username, String password);
     UserModel getUser (String username);
+    void create(UserModel userModel);
 }
