@@ -38,3 +38,17 @@
 - Mẫn: chưa có giao diện để test chức năng nên chưa đảm bảo đưa vào thì chạy đúng
 - Minh: xứ lý thời gian thực đưa vào database
 - Anh: chưa thống nhất được với team
+
+### Day 4:
+#### Hôm qua mình làm gì ?
+- Mẫn: hoàn thành chức năng Logout và phân quyền
+- Minh: hoàn thiện chức năng xem thông tin tài khoản + chức năng chỉnh sửa thông tin tài khoản
+- Anh: hoàn thiệt chức năng quản lý thông tin tài khoản người dùng và tạo tài khoản của admin
+#### Hôm nay mình làm được gì ?
+- Mẫn: làm chức năng tạo tài khoản
+- Minh: xem lại và chỉnh sửa chức năng chỉnh sửa tài khoản
+- Anh: chỉnh sửa lại giao diện cho phù họp yêu cầu của nhóm 
+#### Có khó khăn gì ?
+- Mẫn: hiện tại tui chưa test được
+- Minh: hiện tại chưa có
+- Anh: tạm thời cho có khó khăn
