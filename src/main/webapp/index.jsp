@@ -23,7 +23,7 @@
     </script>
     <script
             src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
 </head>
 <body>
 <div class="boxcenter">
@@ -42,7 +42,7 @@
                     <li class="nav-item"><a class="nav-link active" href="#"></a>
                     </li>
                     <li class="nav-item"><a class="nav-link"
-                                            href="./user/Account_Management_User.jsp">Tài khoản</a></li>
+                                            href="/user/Account_Management_User.jsp">Tài khoản</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.jsp">Đăng
                         nhập</a></li>
                 </ul>
@@ -64,7 +64,7 @@
         <div id="menu">
             <ul>
                 <li><a href="#">Trang chủ</a></li>
-                <li><a href="./user/Account_Management_User.jsp">Tài Khoản</a></li>
+                <li><a href="./views/user/ManagerAccountUser.jsp">Tài Khoản</a></li>
                 <li><a href="#">Đăng ký đề tài</a></li>
                 <li><a href="#">Tìm kiếm</a></li>
             </ul>
