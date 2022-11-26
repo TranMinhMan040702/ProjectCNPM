@@ -52,3 +52,17 @@
 - Mẫn: hiện tại tui chưa test được
 - Minh: hiện tại chưa có
 - Anh: tạm thời cho có khó khăn
+
+### Day 5:
+#### Hôm qua mình làm gì ?
+- Mẫn: gộp và chỉnh sửa ui cho phù hợp chức năng
+- Minh: xem lại và chỉnh sửa chức năng chỉnh sửa tài khoản
+- Anh: thiết kế lại giao diện tổng thể phù hợp với trang đăng ký môn học
+#### Hôm nay mình làm được gì ?
+- Mẫn: hoàn thành chức năng login logout phù hợp giao diện
+- Minh: cài đặt được chức năng lên giao diện
+- Anh: cài đặt được chức năng lên giao diện
+#### Có khó khăn gì ?
+- Mẫn: hiện tại chưa có
+- Minh: hiện tại chưa có
+- Anh: hiện tại chưa có
