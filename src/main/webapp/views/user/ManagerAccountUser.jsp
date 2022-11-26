@@ -200,15 +200,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="form-group">
-                    <label> Chức vụ</label> <br> <label><input
-                        type="radio" value="sinhvien" name="chuc-vu" checked>
-                        Sinh viên</label> <label><input type="radio" name="chuc-vu"
-                        value="giangvien"> Giảng viên</label> <label><input
-                        type="radio" name="chuc-vu" value="truongbomon"> Trưởng
-                        bộ môn</label> <label><input type="radio" name="chuc-vu"
-                        value="admin"> Admin</label>
-                </div> -->
                         <div class="form-group">
                             <input type="checkbox" required name="" />
                             <label>Xác nhận thay đổi</label>

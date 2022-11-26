@@ -23,6 +23,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
         <link href="../../assets/css/style.css" rel="stylesheet" />
         <script src="../../assets/js/main.js"></script>
     </head>
@@ -75,8 +76,7 @@
             <article>
                 <div id="menu">
                     <ul>
-                        <li><a href="../index.jsp">Trang chủ</a></li>
-
+                        <li><a href=".../index.jsp">Trang chủ</a></li>
                         <li><a href="#">Tài Khoản</a></li>
                         <li><a href="#">Đăng ký đề tài</a></li>
                         <li><a href="#">Tìm kiếm</a></li>
@@ -200,15 +200,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="form-group">
-                    <label> Chức vụ</label> <br> <label><input
-                        type="radio" value="sinhvien" name="chuc-vu" checked>
-                        Sinh viên</label> <label><input type="radio" name="chuc-vu"
-                        value="giangvien"> Giảng viên</label> <label><input
-                        type="radio" name="chuc-vu" value="truongbomon"> Trưởng
-                        bộ môn</label> <label><input type="radio" name="chuc-vu"
-                        value="admin"> Admin</label>
-                </div> -->
                         <div class="form-group">
                             <input type="checkbox" required name="" />
                             <label>Xác nhận thay đổi</label>

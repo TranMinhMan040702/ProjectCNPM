@@ -13,7 +13,7 @@ public class UserController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = req.getRequestURL().toString();
         if (url.contains("admin-home")) {
-            req.getRequestDispatcher("/views/admin/home.jsp").forward(req, resp);
+            req.getRequestDispatcher("/views/admin/ManagerAccount.jsp").forward(req, resp);
         } else if (url.contains("sinhvien")) {
             req.getRequestDispatcher("/views/web/SinhVien/home.jsp").forward(req, resp);
         } else if (url.contains("giangvien")) {
