@@ -66,3 +66,17 @@
 - Mẫn: hiện tại chưa có
 - Minh: hiện tại chưa có
 - Anh: hiện tại chưa có
+
+### Day 6:
+#### Hôm qua mình làm gì ?
+- Mẫn: hoàn thành chức năng login logout phù hợp giao diện
+- Minh: cài đặt được chức năng lên giao diện
+- Anh: xây dựng lại hệ thống UI
+#### Hôm nay mình làm được gì ?
+- Mẫn: cấu trúc lại giao diện bằng decorator
+- Minh: : hoàn thiện những lỗi xảy ra
+- Anh: xây dựng lại hệ thống UI
+#### Có khó khăn gì ?
+- Mẫn: hiện tại chưa hoàn thành được còn một vài lỗi
+- Minh: hiện tại chưa có
+- Anh: hiện tại chưa có
