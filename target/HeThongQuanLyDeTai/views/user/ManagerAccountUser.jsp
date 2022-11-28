@@ -104,7 +104,7 @@
                     <div class="form-row">
                         <div class="col">
                             <label>Địa chỉ</label>
-                            <select class="form-control" name="address" >
+                            <select class="form-control" name="address" type="">
 <%--                            <option value="" selected>Nơi sống của bạn</option>--%>
 <%--                            <option value="${user.address}" selected disabled hidden>${user.address}</option>--%>
                             <c:set var = "address" scope = "session" value = "${user.address}"/>
