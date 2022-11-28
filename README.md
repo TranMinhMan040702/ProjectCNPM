@@ -80,3 +80,17 @@
 - Mẫn: hiện tại chưa hoàn thành được còn một vài lỗi
 - Minh: hiện tại chưa có
 - Anh: hiện tại chưa có
+
+### Day 7:
+#### Hôm qua mình làm gì ?
+- Mẫn: cấu trúc lại giao diện bằng decorator
+- Minh: sửa những lỗi xảy ra
+- Anh: giao diện
+#### Hôm nay mình làm được gì ?
+- Mẫn: cấu trúc lại giao diện bằng decorator
+- Minh: xây dựng thêm database, tạo tài khoản, hiển thị danh sách sinh viên
+- Anh: đang xây dựng chức năng tạo đợt đăng ký
+#### Có khó khăn gì ?
+- Mẫn: hiện tại chưa hoàn thành được còn một vài lỗi
+- Minh: khó khăn trong việc xây dựng database
+- Anh: hiện tại chưa có
