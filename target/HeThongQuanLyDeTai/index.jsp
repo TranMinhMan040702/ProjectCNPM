@@ -64,7 +64,7 @@
         <div id="menu">
             <ul>
                 <li><a href="#">Trang chủ</a></li>
-                <li><a href="./views/user/ManagerAccountUser.jsp">Tài Khoản</a></li>
+                <li><a href="./sinhvien/account">Tài Khoản</a></li>
                 <li><a href="#">Đăng ký đề tài</a></li>
                 <li><a href="#">Tìm kiếm</a></li>
             </ul>

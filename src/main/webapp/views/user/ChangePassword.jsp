@@ -7,7 +7,7 @@
     <title>Account Management</title>
     <!-- Font Icon -->
     <link rel="stylesheet"
-          href="../fonts/css/material-design-iconic-font.min.css">
+          href="../../assets/fonts/css/material-design-iconic-font.min.css">
     <!-- Main css -->
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -23,7 +23,7 @@
     </script>
     <script
             src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
 </head>
 <body>
 <div class="boxcenter">
@@ -61,7 +61,7 @@
     <article>
         <div id="menu">
             <ul>
-                <li><a href="../index.jsp">Trang chủ</a></li>
+                <li><a href="../../index.jsp">Trang chủ</a></li>
                 <li><a href="#">Tài Khoản</a></li>
                 <li><a href="#">Đăng ký đề tài</a></li>
                 <li><a href="#">Tìm kiếm</a></li>

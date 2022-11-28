@@ -26,6 +26,6 @@ public class GetUserController extends HttpServlet {
         date1 = new SimpleDateFormat("yyyy-MM-dd").format(userModel.getBirthday());
         request.setAttribute("date1",date1);
         request.setAttribute("user", userModel);
-        request.getRequestDispatcher("/login").forward(request, response);
+        request.getRequestDispatcher("../views/user/ManagerAccountUser.jsp").forward(request, response);
     }
 }
