@@ -2,7 +2,7 @@
          pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp"%>
 <nav
-        class="navbar navbar-expand-md navbar-light bg-light sticky-top"
+        class="navbar navbar-expand-md navbar-light bg-light"
 >
     <div class="container-fluid">
         <button

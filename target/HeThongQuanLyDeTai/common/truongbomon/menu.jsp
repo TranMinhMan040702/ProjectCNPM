@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@include file="/common/taglib.jsp"%>
 <article>
   <div id="menu">
-    <ul style="width: 200px;">
-      <li><a href="../index.jsp">Trang chủ</a></li>
-      <li><a href="<c:url value="/admin/create"/> ">Thông tin cá nhân</a></li>
-      <li><a href="#">Duyệt đề tài</a></li>
+    <ul style="width: 200px; background-color: #f8f9fa;">
+      <li><a href="<c:url value="/home"/>">Trang chủ</a></li>
+      <li><a href="<c:url value="/truongbomon/account"/> ">Thông tin cá nhân</a></li>
+      <li><a href="<c:url value="/truongbomon/duyetdetai"/>">Duyệt đề tài</a></li>
       <li><a href="#">Tìm kiếm</a></li>
     </ul>
   </div>

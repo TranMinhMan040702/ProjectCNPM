@@ -9,7 +9,7 @@
 <body>
 <div class="boxcenter">
     <%@include file="/common/header.jsp"%>
-    <div class="row" style="margin-left: 80px;">
+    <div class="row h-100" style="margin-left: 80px;">
         <dec:body/>
     </div>
     <%@include file="/common/footer.jsp"%>
