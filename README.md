@@ -94,3 +94,18 @@
 - Mẫn: hiện tại chưa hoàn thành được còn một vài lỗi
 - Minh: khó khăn trong việc xây dựng database
 - Anh: hiện tại chưa có
+
+### Day 8:
+#### Hôm qua mình làm gì ?
+- Mẫn: cấu trúc lại giao diện bằng decorator
+- Minh: Xây dựng database, tạo tài khoản, hiên thị danh sách sinh viên
+- Anh: xây dựng chức năng tạo đợt đăng ký
+#### Hôm nay mình làm được gì ?
+- Mẫn: hoàn thành giao diện tạo đợt đăng ký, đăng ký đề tài và duyệt đề tài
+- Minh: cập nhật database, một phần chức năng đăng ký đề tài
+- Anh: xây dựng chức năng tạo đợt đăng ký
+#### Có khó khăn gì ?
+- Mẫn: hiện tại chưa có khó khăn
+- Minh: hiện tại chưa có khó khăn
+- Anh: hiện tại chưa có khó khăn
+
