@@ -21,9 +21,10 @@ header {
     height: 40px;
 }
 
-.boxcenter {
+.wrapper {
     width: 70%;
     margin: 0 auto;
+    height: 100%;
 }
 
 article {
@@ -77,6 +78,7 @@ input[type=radio] {
     padding: 0;
     list-style-type: none;
     text-align: left;
+    background-color: #f8f9fa;
 }
 
 #menu li {

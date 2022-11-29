@@ -6,10 +6,10 @@
     <title>HomePage</title>
     <%@include file="/common/link-css-js.jsp"%>
 </head>
-<body>
-<div class="boxcenter">
-    <%@include file="/common/header.jsp"%>
-    <%@include file="/common/nav.jsp"%>
+<body class="wrapper">
+<%@include file="/common/header.jsp"%>
+<%@include file="/common/nav.jsp"%>
+<div class="container-fluid">
     <div class="row mt-3">
         <div class="col-3">
             <%@include file="/common/giangvien/menu.jsp"%>
@@ -23,9 +23,7 @@
             <dec:body/>
         </div>
     </div>
-    <%@include file="/common/footer.jsp"%>
 </div>
-
-</body>
+<%@include file="/common/footer.jsp"%>
 </body>
 </html>

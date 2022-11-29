@@ -13,4 +13,4 @@
 <script src="<c:url value="/assets/js/main.js"/>"></script>
 <link href="<c:url value="/assets/css/main.css"/>" rel="stylesheet">
 <link rel="stylesheet" href="<c:url
-value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>">
+value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>">

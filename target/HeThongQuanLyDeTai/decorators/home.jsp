@@ -7,33 +7,33 @@
     <%@include file="/common/link-css-js.jsp"%>
 </head>
 <body>
-<div class="boxcenter">
-    <%@include file="/common/header.jsp"%>
-    <nav
-            class="navbar navbar-expand-md navbar-light bg-light sticky-top"
-    >
-        <div class="container-fluid">
-            <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarResponsive"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<c:url value="/login"/> "
-                        >Đăng nhập</a
-                        >
-                    </li>
-                </ul>
-            </div>
+<div class="wrapper">
+<%@include file="/common/header.jsp"%>
+<nav
+        class="navbar navbar-expand-md navbar-light bg-light sticky-top"
+>
+    <div class="container-fluid">
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarResponsive"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="<c:url value="/login"/> "
+                    >Đăng nhập</a
+                    >
+                </li>
+            </ul>
         </div>
-    </nav>
-
-    <div class="row mt-2">
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row mt-3">
         <div class="col-3">
             <%@include file="/common/admin/menu.jsp"%>
         </div>
@@ -46,7 +46,7 @@
             <dec:body/>
         </div>
     </div>
-    <%@include file="/common/footer.jsp"%>
 </div>
+<%@include file="/common/footer.jsp"%>
 </body>
 </html>
