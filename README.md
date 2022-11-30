@@ -109,3 +109,17 @@
 - Minh: hiện tại chưa có khó khăn
 - Anh: hiện tại chưa có khó khăn
 
+### Day 9:
+#### Hôm qua mình làm gì ?
+- Mẫn: hoàn thành giao diện tạo đợt đăng ký, đăng ký đề tài và duyệt đề tài
+- Minh: cập nhật database, một phần chức năng đăng ký đề tài
+- Anh: hoàn thành code tạo đợt đăng ký
+#### Hôm nay mình làm được gì ?
+- Mẫn: đã hoàn thành task được giao, không có nhiệm vụ
+- Minh: cập nhật lại các chức năng trước trên giao diện, cài đặt chức năng đăng ký đề tài cho giảng viên
+- Anh: hoàn thành code duyệt đề tài
+#### Có khó khăn gì ?
+- Mẫn: hiện tại chưa có khó khăn
+- Minh: hiện tại chưa có khó khăn
+- Anh: hiện tại chưa có khó khăn
+
