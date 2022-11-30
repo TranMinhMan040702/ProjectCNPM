@@ -9,7 +9,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = {"/home", "/admin/home", "/sinhvien/home", "/giangvien/home",
         "/truongbomon/home", "/admin/create-registration", "/sinhvien/registration",
-        "/giangvien/registration", "/truongbomon/duyetdetai"})
+         "/truongbomon/duyetdetai"}) //"/giangvien/registration",
 public class UserController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

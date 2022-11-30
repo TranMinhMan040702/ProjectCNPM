@@ -9,6 +9,11 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import utils.HibernateUtils;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserDAO implements IUserDAO{
     @Override
     public LoginModel login(String username, String password) {
@@ -62,12 +67,34 @@ public class UserDAO implements IUserDAO{
         return null;
     }
 
+    public List<UserModel> getAll() {
+        List<UserModel> userModels = new ArrayList<>();
+        List<User> users = null;
+        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<User> criteriaQuery = builder.createQuery(User.class);
+            criteriaQuery.from(User.class);
+            users = session.createQuery(criteriaQuery).getResultList();
+            for(User s: users){
+                UserModel userModel = new UserModel();
+                BeanUtils.copyProperties(userModel, s);
+                userModels.add(userModel);
+            }
+
+            return userModels;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
     @Override
-    public void update(UserModel user) {
+    public void update(UserModel userModel) {
         Transaction transaction = null;
+        User user = new User();
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-
+            BeanUtils.copyProperties(user, userModel);
             session.update(user);
 
             transaction.commit();

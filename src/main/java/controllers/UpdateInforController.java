@@ -45,8 +45,10 @@ public class UpdateInforController extends HttpServlet {
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         UserService userService = new UserService();
         userService.update(request,response);
-//        response.sendRedirect("/admin/account");
+
+        response.sendRedirect("../account");
     }
 }

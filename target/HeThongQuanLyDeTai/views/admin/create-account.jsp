@@ -8,47 +8,60 @@
 <body>
 <div>
     <h5 class="form-title" style="font-weight: bold">Tạo tài khoản</h5>
-    <form>
+    <form action="create" method="post">
         <div class="row">
             <div class="form-group col-6">
                 <label>Tài khoản</label>
-                <input id="a" type="text" class="form-control" placeholder="Tên tài khoản" required name="">
+                <input id="a" type="text" class="form-control" placeholder="Tên tài khoản" required name="username">
             </div>
             <div class="form-group col-6">
                 <label>Mật khẩu</label>
-                <input id="b" type="text" class="form-control" placeholder="Mật khẩu" required name="">
+                <input id="b" type="text" class="form-control" placeholder="Mật khẩu" required name="password">
             </div>
             <div class="form-group col-6">
                 <label>Họ tên</label>
-                <input id="name" type="text" class="form-control" placeholder="Tên của bạn" required name="">
+                <input id="name" type="text" class="form-control" placeholder="Tên của bạn" required name="fullname">
             </div>
             <div class="form-group col-6">
                 <label>Giới tính:</label> <br>
-                <label><input type="radio" value="nam" name="gender" checked> Nam</label>
-                <label><input type="radio" name="gender" value="nu"> Nữ</label>
+                <label><input type="radio" value="Nam" name="male" checked> Nam</label>
+                <label><input type="radio" name="male" value="Nữ"> Nữ</label>
             </div>
             <div class="form-group col-12">
                 <label>Email</label>
-                <input type="email" class="form-control" placeholder="Email của bạn" required name="">
+                <input type="email" class="form-control" placeholder="Email của bạn" required name="email">
             </div>
             <div class="form-group col-12">
                 <label>Ngày sinh</label>
-                <input id="dob" type="date" class="form-control" placeholder="Ngày sinh của bạn" required name="">
+                <input id="dob" type="date" class="form-control" placeholder="Ngày sinh của bạn" required name="birthday">
             </div>
             <div class="form-group col-6">
                 <label>Địa chỉ</label>
-                <input type="tel" class="form-control" placeholder="Địa chỉ hiện tại" required name="">
+                <input type="tel" class="form-control" placeholder="Địa chỉ hiện tại" required name="address">
             </div>
             <div class="form-group col-6">
                 <label>SĐT</label>
-                <input type="tel" class="form-control" placeholder="Số điện thoại" required name="">
+                <input type="tel" class="form-control" placeholder="Số điện thoại" required name="phone">
+            </div>
+            <div class="col">
+                <label>Năm hoạt động</label> <input type="text"
+                                                    class="form-control" placeholder="Năm vào trường" required
+                                                    name="schoolyear">
+            </div>
+            <div class="col">
+                <label>Khoa</label>
+                <select id="departments" class="form-control" name="department">
+                <option value="Công nghệ thông tin">Công nghệ thông tin</option>
+                <option value="Kinh tế">Kinh tế</option>
+                <option value="Xây dựng">Xây dựng</option>
+                </select>
             </div>
             <div class="form-group col-12">
                 <label> Chức vụ</label> <br>
-                <label><input type="radio" value="sinhvien" name="chuc-vu" checked>Sinh viên</label>
-                <label><input type="radio" name="chuc-vu" value="giangvien"> Giảng viên</label>
-                <label><input type="radio" name="chuc-vu" value="truongbomon"> Trưởng bộ môn</label>
-                <label><input type="radio" name="chuc-vu" value="admin"> Admin</label>
+                <label><input type="radio" value="sinhvien" name="role" checked>Sinh viên</label>
+                <label><input type="radio" name="role" value="giangvien"> Giảng viên</label>
+                <label><input type="radio" name="role" value="truongbomon"> Trưởng bộ môn</label>
+                <label><input type="radio" name="role" value="admin"> Admin</label>
             </div>
         </div>
         <div class="form-group d-flex justify-content-end">
@@ -76,13 +89,14 @@
         </tr>
         </thead>
         <tbody>
+        <c:forEach var="user" items="${userModelList}">
         <tr>
-            <td>20110301</td>
-            <td>mantran2k2</td>
-            <td>Trần Minh Mẫn</td>
-            <td>Công nghệ thông tin</td>
-            <td>04/07/2002</td>
-            <td>Nam</td>
+            <td>${user.username}</td>
+            <td>${user.password}</td>
+            <td>${user.fullname}</td>
+            <td>${user.department}</td>
+            <td>${user.birthday}</td>
+            <td>${user.male}</td>
             <td>
                 <div class="d-flex justify-content-around align-items-center">
                     <a href="">
@@ -94,6 +108,7 @@
                 </div>
             </td>
         </tr>
+        </c:forEach>
         </tbody>
     </table>
 </div>

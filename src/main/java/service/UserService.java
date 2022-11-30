@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class UserService implements IUserService{
     IUserDAO userDAO = new UserDAO();
@@ -42,20 +43,18 @@ public class UserService implements IUserService{
         userModel.setFullname(request.getParameter("fullname"));
         userModel.setMale(request.getParameter("male"));
         userModel.setEmail(request.getParameter("email"));
-        //userModel.setBirthday(request.getParameter("birthday"));
         userModel.setAddress(request.getParameter("address"));
         userModel.setPhone(request.getParameter("phone"));
-        userModel.setSchoolyear(request.getParameter("schoolyear"));
-        userModel.setDepartment(request.getParameter("department"));
-        userModel.setRole(request.getParameter("role"));
-        String availableDate = request.getParameter("availableDate");
+        String birthday = request.getParameter("birthday");
         try {
-            Date date1= new SimpleDateFormat("yyyy-MM-dd").parse(availableDate);
+            Date date1= new SimpleDateFormat("yyyy-MM-dd").parse(birthday);
             userModel.setBirthday(date1);
         } catch (ParseException e) {
-
             throw new RuntimeException(e);
+
         }
         userDAO.update(userModel);
     }
+
+    public List<UserModel> getAllUser(){return userDAO.getAll();}
 }

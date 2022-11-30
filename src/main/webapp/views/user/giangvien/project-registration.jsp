@@ -7,37 +7,44 @@
 </head>
 <body>
 <div>
-  <h5 class="form-title" style="font-weight: bold">Tạo tài khoản</h5>
-  <form>
+  <h5 class="form-title" style="font-weight: bold">Đăng ký đề tài</h5>
+  <form action="registration/create" method="post">
     <div class="form-group">
       <div class="row">
         <div class="form-group col-12">
           <label>Tên đề tài</label>
-          <input id="a" type="text" class="form-control" placeholder="Tên đề tài" required name="">
+          <input id="a" type="text" class="form-control" placeholder="Tên đề tài" required name="topic"  value="">
         </div>
         <div class="form-group col-6">
+            <input hidden name="username" value="${lecturers.username}">
           <label>Chuyên ngành</label>
-          <select id="" class="form-control">
-            <option value="cntt">Công nghệ thông tin</option>
-            <option value="kt">Kinh tế</option>
-            <option value="xd">Xây dựng</option>
-          </select>
+<%--          <select id="" class="form-control">--%>
+<%--            <option value="cntt">Công nghệ thông tin</option>--%>
+<%--            <option value="kt">Kinh tế</option>--%>
+<%--            <option value="xd">Xây dựng</option>--%>
+<%--          </select>--%>
+          <input id="" type="text" class="form-control" placeholder="Chuyên ngành" required name="" value="${lecturers.department}" disabled>
+            <input name="department" value="${lecturers.department}" hidden>
         </div>
         <div class="form-group col-6">
           <label>Giáo viên hướng dẫn</label>
-          <input id="name" type="text" class="form-control" placeholder="GVHD" required name="">
+          <input id="name" type="text" class="form-control" placeholder="GVHD" required name="fullname" value="${lecturers.fullname}" disabled>
         </div>
       </div>
     </div>
     <div class="form-group">
       <div class="row">
-        <div class="form-group col-6">
-          <label>Số lượng sinh viên</label>
-          <input type="tel" class="form-control" placeholder="Số lượng sinh viên" required name="">
+        <div class="form-group col-12">
+          <label>Yêu Cầu</label>
+          <input type="tel" class="form-control" placeholder="Yêu Cầu" required name="request">
         </div>
-        <div class="form-group col-6">
-          <label>Niên khóa</label>
-          <input type="tel" class="form-control" placeholder="Niên khóa" required name="">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="form-group col-12">
+          <label>Mục tiêu</label>
+          <input type="tel" class="form-control" placeholder="Mục tiêu" required name="target">
         </div>
       </div>
     </div>
