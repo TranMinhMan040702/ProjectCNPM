@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/login", "/logout", "/trang-chu"})
+@WebServlet(urlPatterns = {"/login", "/logout"})
 public class LoginController extends HttpServlet {
     IUserService userService = new UserService();
     @Override
@@ -22,9 +22,7 @@ public class LoginController extends HttpServlet {
             req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
         } else if (url.contains("logout")) {
             SessionUtil.getInstance().removeValue(req, "USERMODEL");
-            resp.sendRedirect(req.getContextPath() + "/trang-chu");
-        } else if (url.contains("trang-chu")) {
-            req.getRequestDispatcher("/views/home.jsp").forward(req, resp);
+            resp.sendRedirect(req.getContextPath() + "/home");
         }
     }
     @Override

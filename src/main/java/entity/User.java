@@ -2,9 +2,10 @@ package entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-@Table(name = "user")
+@Table(name = "User")
 public class User {
 
     @Id
@@ -40,22 +41,12 @@ public class User {
     @Column
     private String role;
 
-    public User() {
-    }
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<ProjectLecturers> projectLecturers;
 
-    public User(String username, String password, String fullname, String male, String email, Date birthday, String address, String phone, String schoolyear, String department, String role) {
-        this.username = username;
-        this.password = password;
-        this.fullname = fullname;
-        this.male = male;
-        this.email = email;
-        this.birthday = birthday;
-        this.address = address;
-        this.phone = phone;
-        this.schoolyear = schoolyear;
-        this.department = department;
-        this.role = role;
-    }
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<ProjectStudent> projectStudents;
+
 
     public String getUsername(){
         return username;
@@ -143,5 +134,21 @@ public class User {
 
     public void setMale(String male) {
         this.male = male;
+    }
+
+    public List<ProjectLecturers> getProjectLecturers() {
+        return projectLecturers;
+    }
+
+    public void setProjectLecturers(List<ProjectLecturers> projectLecturers) {
+        this.projectLecturers = projectLecturers;
+    }
+
+    public List<ProjectStudent> getProjectStudents() {
+        return projectStudents;
+    }
+
+    public void setProjectStudents(List<ProjectStudent> projectStudents) {
+        this.projectStudents = projectStudents;
     }
 }

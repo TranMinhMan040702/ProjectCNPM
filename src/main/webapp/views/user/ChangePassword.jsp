@@ -61,7 +61,7 @@
     <article>
         <div id="menu">
             <ul>
-                <li><a href="../index.jsp">Trang chủ</a></li>
+                <li><a href="../../index.jsp">Trang chủ</a></li>
                 <li><a href="#">Tài Khoản</a></li>
                 <li><a href="#">Đăng ký đề tài</a></li>
                 <li><a href="#">Tìm kiếm</a></li>
