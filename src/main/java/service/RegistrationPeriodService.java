@@ -4,7 +4,6 @@ import dao.IRegistrationPeriodDAO;
 import dao.RegistrationPeriodDAO;
 import entity.RegistrationPeriod;
 import models.RegistrationPeriodModel;
-import org.jetbrains.annotations.NotNull;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -33,7 +32,7 @@ public class RegistrationPeriodService implements IRegistrationPeriodService {
     }
 
     @Override
-    public void update(@NotNull HttpServletRequest request, HttpServletResponse response)
+    public void update(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         HttpSession session = request.getSession();
