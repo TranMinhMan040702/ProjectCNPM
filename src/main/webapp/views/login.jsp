@@ -9,7 +9,6 @@
     <title>Login</title>
 </head>
 <body>
-<div class="boxcenter">
     <aside>
         <div style="padding: 20px 50px 50px 50px">
             <div class="signin-form">
@@ -48,7 +47,6 @@
             </div>
         </div>
     </aside>
-</div>
 <script>
     function Back(e) {
         e.preventDefault();

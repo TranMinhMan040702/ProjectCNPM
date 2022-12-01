@@ -6,7 +6,7 @@
     <title>profile</title>
 </head>
 <body>
-<h2 class="form-title">Cập nhập thông tin</h2>
+<h5 style="font-weight: bold">Cập nhập thông tin</h5>
 <form>
     <div class="row">
         <div class="form-group col-6">

@@ -54,7 +54,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                <button type="button" class="btn btn-primary">chắc chắn</button>
+                <button type="button" class="btn btn-primary">Chắc chắn</button>
             </div>
         </div>
     </div>

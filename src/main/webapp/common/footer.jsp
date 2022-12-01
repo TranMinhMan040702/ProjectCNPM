@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<footer class="w-75 text-center" style="margin: 0 auto;">
+<footer class="text-center" style="margin: 0 auto;">
     <p>
         Khoa Công nghệ Thông tin - Đại học Sư phạm Kỹ thuật TP. Hồ Chí Minh
     </p>

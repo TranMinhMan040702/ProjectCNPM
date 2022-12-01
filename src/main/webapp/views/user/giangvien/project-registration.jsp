@@ -7,7 +7,7 @@
 </head>
 <body>
 <div>
-  <h5 class="form-title" style="font-weight: bold">Tạo tài khoản</h5>
+  <h5 class="form-title" style="font-weight: bold">Đăng ký đề tài</h5>
   <form>
     <div class="form-group">
       <div class="row">
