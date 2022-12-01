@@ -123,3 +123,17 @@
 - Minh: hiện tại chưa có khó khăn
 - Anh: hiện tại chưa có khó khăn
 
+### Day 9:
+#### Hôm qua mình làm gì ?
+- Mẫn: không có nhiệm vụ 
+- Minh: cập nhật lại các chức năng trước trên giao diện, cài đặt chức năng đăng ký đề tài cho giảng viên
+- Anh: viết phần duyệt đề tài
+#### Hôm nay mình làm được gì ?
+- Mẫn: chỉnh sửa lại UI theo yêu cầu của team
+- Minh: hoàn thiện chức năng, còn thiếu một vài chức năng chỉnh sửa
+- Anh: cập nhật chức năng trên giao diện (chưa hoàn tất)
+#### Có khó khăn gì ?
+- Mẫn: hiện tại chưa có khó khăn
+- Minh: hiện tại chưa có khó khăn
+- Anh: kết nối với giao diện
+
