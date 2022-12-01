@@ -6,14 +6,11 @@
     <title>Đăng nhập</title>
     <%@include file="/common/link-css-js.jsp"%>
 </head>
-<body>
-<div class="boxcenter">
-    <%@include file="/common/header.jsp"%>
-    <div class="row h-100" style="margin-left: 80px;">
-        <dec:body/>
-    </div>
-    <%@include file="/common/footer.jsp"%>
+<body class="wrapper">
+<%@include file="/common/header.jsp"%>
+<div class="row">
+    <dec:body/>
 </div>
-
+<%@include file="/common/footer.jsp"%>
 </body>
 </html>
