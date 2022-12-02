@@ -1,6 +1,7 @@
 package controllers;
 
 import models.LoginModel;
+import models.UserModel;
 import service.IUserService;
 import service.UserService;
 import utils.SessionUtil;
@@ -22,7 +23,7 @@ public class LoginController extends HttpServlet {
             req.getRequestDispatcher("/views/login.jsp").forward(req, resp);
         } else if (url.contains("logout")) {
             SessionUtil.getInstance().removeValue(req, "USERMODEL");
-            resp.sendRedirect(req.getContextPath() + "/trang-chu");
+            resp.sendRedirect(req.getContextPath() + "/home");
         } else if (url.contains("trang-chu")) {
             req.getRequestDispatcher("/views/home.jsp").forward(req, resp);
         }
@@ -32,17 +33,17 @@ public class LoginController extends HttpServlet {
         String url = req.getRequestURL().toString();
         if (url.contains("login")) {
             LoginModel model = userService.login(req.getParameter("username"), req.getParameter("password"));
-            System.out.println(model.getRole());
+            UserModel userModel = userService.getUser(model.getUsername());
             if (model != null) {
-                SessionUtil.getInstance().putValue(req, "USERMODEL", model);
+                SessionUtil.getInstance().putValue(req, "USERMODEL", userModel);
                 if (model.getRole().equals("sinhvien")) {
-                    resp.sendRedirect(req.getContextPath() + "/sinhvien");
+                    resp.sendRedirect(req.getContextPath() + "/sinhvien/home");
                 } else if (model.getRole().equals("giangvien")) {
-                    resp.sendRedirect(req.getContextPath() + "/giangvien");
+                    resp.sendRedirect(req.getContextPath() + "/giangvien/home");
                 } else if (model.getRole().equals("truongbomon")) {
-                    resp.sendRedirect(req.getContextPath() + "/truongbomon");
+                    resp.sendRedirect(req.getContextPath() + "/truongbomon/home");
                 } else if (model.getRole().equals("admin")) {
-                    resp.sendRedirect(req.getContextPath() + "/admin-home");
+                    resp.sendRedirect(req.getContextPath() + "/admin/home");
                 } else {
                     resp.sendRedirect(req.getContextPath() + "/login");
                 }

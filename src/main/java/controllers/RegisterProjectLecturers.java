@@ -7,6 +7,7 @@ import models.UserModel;
 import org.apache.commons.beanutils.BeanUtils;
 import service.ProjectLecturersService;
 import service.UserService;
+import utils.SessionUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,11 +26,8 @@ import java.util.Date;
 public class RegisterProjectLecturers extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        String username = request.getParameter("username");
-        //String username = (String) request.getSession().getAttribute("username");
+        UserModel userModel = (UserModel) SessionUtil.getInstance().getValue(request,"USERMODEL");
         ProjectLecturersModel projectLecturersModel = new ProjectLecturersModel();
-        UserService userService = new UserService();
-        UserModel userModel = userService.getUser(username);
         User user = new User();
         try {
             BeanUtils.copyProperties(user, userModel);
@@ -51,15 +49,13 @@ public class RegisterProjectLecturers extends HttpServlet {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        //projectLecturersModel.setId(1);
         projectLecturersModel.setTopic(request.getParameter("topic"));
         projectLecturersModel.setDepartment(request.getParameter("department"));
         projectLecturersModel.setUser(user);
         projectLecturersModel.setRequest(request.getParameter("request"));
         projectLecturersModel.setTarget(request.getParameter("target"));
         ProjectLecturersService projectLecturersService = new ProjectLecturersService();
-        //projectLecturersService.create(projectLecturersModel);
-        ProjectLecturersDAO projectLecturersDAO = new ProjectLecturersDAO();
         projectLecturersService.create(projectLecturersModel);
+        response.sendRedirect("../registration");
     }
 }

@@ -29,12 +29,6 @@ public class UserService implements IUserService{
         userDAO.create(userModel);
     }
 
-    public static void main(String[] args) {
-        String username = "20110677";
-        UserService userService = new UserService();
-        UserModel userModel = userService.getUser(username);
-        System.out.println(userModel.getFullname());
-    }
     public void update(HttpServletRequest request, HttpServletResponse response){
         HttpSession session = request.getSession();
         String username = request.getParameter("username");
@@ -53,6 +47,9 @@ public class UserService implements IUserService{
             throw new RuntimeException(e);
 
         }
+        userDAO.update(userModel);
+    }
+    public void updateUser(UserModel userModel){
         userDAO.update(userModel);
     }
 
