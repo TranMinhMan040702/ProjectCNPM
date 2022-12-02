@@ -80,3 +80,60 @@
 - Mẫn: hiện tại chưa hoàn thành được còn một vài lỗi
 - Minh: hiện tại chưa có
 - Anh: hiện tại chưa có
+
+### Day 7:
+#### Hôm qua mình làm gì ?
+- Mẫn: cấu trúc lại giao diện bằng decorator
+- Minh: sửa những lỗi xảy ra
+- Anh: giao diện
+#### Hôm nay mình làm được gì ?
+- Mẫn: cấu trúc lại giao diện bằng decorator
+- Minh: xây dựng thêm database, tạo tài khoản, hiển thị danh sách sinh viên
+- Anh: đang xây dựng chức năng tạo đợt đăng ký
+#### Có khó khăn gì ?
+- Mẫn: hiện tại chưa hoàn thành được còn một vài lỗi
+- Minh: khó khăn trong việc xây dựng database
+- Anh: hiện tại chưa có
+
+### Day 8:
+#### Hôm qua mình làm gì ?
+- Mẫn: cấu trúc lại giao diện bằng decorator
+- Minh: Xây dựng database, tạo tài khoản, hiên thị danh sách sinh viên
+- Anh: xây dựng chức năng tạo đợt đăng ký
+#### Hôm nay mình làm được gì ?
+- Mẫn: hoàn thành giao diện tạo đợt đăng ký, đăng ký đề tài và duyệt đề tài
+- Minh: cập nhật database, một phần chức năng đăng ký đề tài
+- Anh: xây dựng chức năng tạo đợt đăng ký
+#### Có khó khăn gì ?
+- Mẫn: hiện tại chưa có khó khăn
+- Minh: hiện tại chưa có khó khăn
+- Anh: hiện tại chưa có khó khăn
+
+### Day 9:
+#### Hôm qua mình làm gì ?
+- Mẫn: hoàn thành giao diện tạo đợt đăng ký, đăng ký đề tài và duyệt đề tài
+- Minh: cập nhật database, một phần chức năng đăng ký đề tài
+- Anh: hoàn thành code tạo đợt đăng ký
+#### Hôm nay mình làm được gì ?
+- Mẫn: đã hoàn thành task được giao, không có nhiệm vụ
+- Minh: cập nhật lại các chức năng trước trên giao diện, cài đặt chức năng đăng ký đề tài cho giảng viên
+- Anh: hoàn thành code duyệt đề tài
+#### Có khó khăn gì ?
+- Mẫn: hiện tại chưa có khó khăn
+- Minh: hiện tại chưa có khó khăn
+- Anh: hiện tại chưa có khó khăn
+
+### Day 9:
+#### Hôm qua mình làm gì ?
+- Mẫn: không có nhiệm vụ 
+- Minh: cập nhật lại các chức năng trước trên giao diện, cài đặt chức năng đăng ký đề tài cho giảng viên
+- Anh: viết phần duyệt đề tài
+#### Hôm nay mình làm được gì ?
+- Mẫn: chỉnh sửa lại UI theo yêu cầu của team
+- Minh: hoàn thiện chức năng, còn thiếu một vài chức năng chỉnh sửa
+- Anh: cập nhật chức năng trên giao diện (chưa hoàn tất)
+#### Có khó khăn gì ?
+- Mẫn: hiện tại chưa có khó khăn
+- Minh: hiện tại chưa có khó khăn
+- Anh: kết nối với giao diện
+
