@@ -13,14 +13,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class UserService implements IUserService{
+public class UserService implements IUserService {
     IUserDAO userDAO = new UserDAO();
     @Override
     public LoginModel login(String username, String password) {
         return userDAO.login(username, password);
     }
 
-    public UserModel getUser (String username){
+    @Override
+    public UserModel getUser(String username){
         return userDAO.get(username);
     }
 
@@ -29,6 +30,7 @@ public class UserService implements IUserService{
         userDAO.create(userModel);
     }
 
+    @Override
     public void update(HttpServletRequest request, HttpServletResponse response){
         HttpSession session = request.getSession();
         String username = request.getParameter("username");
@@ -49,9 +51,11 @@ public class UserService implements IUserService{
         }
         userDAO.update(userModel);
     }
+    @Override
     public void updateUser(UserModel userModel){
         userDAO.update(userModel);
     }
 
+    @Override
     public List<UserModel> getAllUser(){return userDAO.getAll();}
 }

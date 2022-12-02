@@ -1,7 +1,6 @@
 package controllers;
 
 import models.UserModel;
-import org.apache.commons.beanutils.BeanUtils;
 import service.IUserService;
 import service.UserService;
 
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

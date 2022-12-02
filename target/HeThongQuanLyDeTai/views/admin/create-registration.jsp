@@ -6,11 +6,11 @@
     <title>Tạo đợt đăng ký</title>
 </head>
 <body>
-<form class="mb-5">
+<form class="mb-5" action="createregistrationperiod" method="post">
     <label>Đối tượng</label>
     <div class="form-group row">
         <div class="col-6">
-            <select class="custom-select" name="" id="">
+            <select class="custom-select" name="role" id="">
                 <option value="sinhvien" selected>Sinh viên</option>
                 <option value="giangvien">Giảng viên</option>
             </select>
@@ -19,12 +19,13 @@
     <div class="row">
         <div class="form-group col-6">
             <label>Chọn ngày bắt đầu</label>
-            <input class="form-control" type="date" name="start" value="" required/>
+            <input class="form-control" type="date" name="startday" value="" required/>
         </div>
         <div class="form-group col-6">
             <label>Chọn ngày kết thúc</label>
-            <input class="form-control" type="date" name="end" value="" required/>
+            <input class="form-control" type="date" name="endday" value="" required/>
         </div>
+
     </div>
     <button type="submit" class="btn btn-primary d-block position-absolute" style="right: 16px;">Tạo đợt đăng
         ký</button>
@@ -42,22 +43,24 @@
         </tr>
         </thead>
         <tbody>
+        <c:forEach var="regis" items="${registrationPeriodModelList}">
         <tr>
-            <th scope="row">1</th>
-            <td>Sinh viên</td>
-            <td>29/11/2022</td>
-            <td>29/12/2022</td>
+            <td></td>
+            <td>${regis.role}</td>
+            <td>${regis.startday}</td>
+            <td>${regis.endday}</td>
             <td>
                 <div class="d-flex justify-content-around align-items-center">
                     <a href="" >
                         <i class="fa-solid fa-pen-to-square"></i>
                     </a>
-                    <a href="">
+                    <a href="http://localhost:8080/ProjectCNPM_master_war/admin/create-registration/delete?id=${regis.id}" >
                         <i class="fa-solid fa-trash"></i>
                     </a>
                 </div>
             </td>
         </tr>
+        </c:forEach>
         </tbody>
     </table>
 </div>
