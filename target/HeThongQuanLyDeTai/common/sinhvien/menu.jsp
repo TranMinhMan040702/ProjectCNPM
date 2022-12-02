@@ -7,7 +7,7 @@
       <li><a href="<c:url value="/home"/>">Trang chủ</a></li>
       <li><a href="<c:url value="/sinhvien/account"/> ">Thông tin cá nhân</a></li>
       <li><a href="#">Quán lý nhóm</a></li>
-      <li><a href="<c:url value="/sinhvien/registration"/> ">Đăng ký đề tài</a></li>
+      <li><a href="<c:url value="/sinhvien/registration/change"/> ">Đăng ký đề tài</a></li>
       <li><a href="#">Nộp báo cáo</a></li>
       <li><a href="#">Tìm kiếm</a></li>
     </ul>

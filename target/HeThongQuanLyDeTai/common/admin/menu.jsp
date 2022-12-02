@@ -5,7 +5,7 @@
   <div id="menu">
     <ul style="width: 200px; background-color: #f8f9fa;">
       <li><a href="<c:url value="/home"/>">Trang chủ</a></li>
-      <li><a href="<c:url value="/admin/create"/> ">Tạo tài khoản</a></li>
+      <li><a href="<c:url value="/admin/account"/> ">Tạo tài khoản</a></li>
       <li><a href="<c:url value="/admin/create-registration"/> ">Tạo đợt đăng ký</a></li>
       <li><a href="#">Tìm kiếm</a></li>
     </ul>
