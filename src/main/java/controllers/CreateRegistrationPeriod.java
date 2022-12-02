@@ -32,6 +32,7 @@ public class CreateRegistrationPeriod extends HttpServlet {
         }
         registrationPeriodModel.setRole(req.getParameter("role"));
         registrationPeriodService.create(registrationPeriodModel);
+        System.out.println("chạy");
         resp.sendRedirect("../admin/create-registration");
     }
 }

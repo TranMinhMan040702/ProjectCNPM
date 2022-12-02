@@ -31,6 +31,6 @@ public class BrowseProjectController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BrowseProjectService browseProjectService = new BrowseProjectService();
         browseProjectService.update(req, resp);
-        resp.sendRedirect("../truongbomon/browse-project");
+        resp.sendRedirect("../browse-project");
     }
 }

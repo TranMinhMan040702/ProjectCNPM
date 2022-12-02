@@ -12,19 +12,19 @@
         <thead>
         <tr>
             <th scope="col">Sinh viên đăng ký</th>
-<%--            <th scope="col">Tên đề tài</th>--%>
-<%--            <th scope="col">Chuyên ngành</th>--%>
-<%--            <th scope="col">GVHD</th>--%>
+            <th scope="col">Tên đề tài</th>
+            <th scope="col">Chuyên ngành</th>
+            <th scope="col">GVHD</th>
             <th scope="col">Thao tác</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach var="projS" items="${projectStudentModelList}">
         <tr>
-            <td>${projS.user}</td>
-<%--            <td>${projS.projectLecturers.topic}</td>--%>
-<%--            <td>${projS.projectLecturers.department}</td>--%>
-<%--            <td>${projS.projectLecturers.user}</td>--%>
+            <td>${projS.user.username}</td>
+            <td>${projS.projectLecturers.topic}</td>
+            <td>${projS.projectLecturers.department}</td>
+            <td>${projS.projectLecturers.user.username}</td>
             <td>
                 <div class="d-flex justify-content-around align-items-center">
                     <button type="button" class="btn btn-primary btn-sm" style="margin-right: 10px;">

@@ -24,6 +24,7 @@ public class GetAllRegistrationPeriod extends HttpServlet {
         RegistrationPeriodService registrationPeriodService = new RegistrationPeriodService();
         List<RegistrationPeriodModel> registrationPeriodModelList= registrationPeriodService.getAll();
         request.setAttribute("registrationPeriodModelList", registrationPeriodModelList);
+        System.out.println("chạy");
         request.getRequestDispatcher("../views/admin/create-registration.jsp").forward(request, response);
     }
 }
