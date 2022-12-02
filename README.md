@@ -5,10 +5,24 @@
 - Trần Minh Mẫn - 20110301
 - Trần Công Minh - 20110677
 
+## Kết quả đạt được 
+### Hoàn thành Sprint 1 gồm các chức năng: 
++ Đăng nhập
++ Đăng xuât
++ Quản lý tài khoản hệ thống
++ Quản lý tài khoản cá nhân
++ Tạo đợt đăng ký
++ Đăng lý đề tài
++ Duyệt đề tài
++ Hệ thống có phần quyền cụ thể cho từng Actor
+
 ## Daily Scrum Meeting
 ### Day 1: Sprint Planning Meeting, Create Sprint Backlog for Sprint 1
 - Thành viên: tất cả
-- Ước lượng thời gian: 2 giờ
+- Nhóm: họp chọn ra các chức năng cần thực hiện trong sprint và lập ra sprint backlog
+- Mẫn: thiết kế database
+- Minh: thiết kế database
+- Anh: giao diện trang Login
 
 ### Day 2:
 #### Hôm qua mình làm gì ?
@@ -55,8 +69,22 @@
 
 ### Day 5:
 #### Hôm qua mình làm gì ?
-- Mẫn: gộp và chỉnh sửa ui cho phù hợp chức năng
+- Mẫn: làm chức năng tạo tài khoản, gộp và chỉnh sửa ui cho phù hợp chức năng
 - Minh: xem lại và chỉnh sửa chức năng chỉnh sửa tài khoản
+- Anh: thiết kế lại giao diện tổng thể phù hợp với trang đăng ký môn học
+#### Hôm nay mình làm được gì ?
+- Mẫn: chưa làm thêm được gì
+- Minh: hoàn thiện chức năng chỉnh sửa tài khoản
+- Anh: thiết kế lại giao diện cho phù hợp
+#### Có khó khăn gì ?
+- Mẫn: hiện tại chưa có
+- Minh: hiện tại chưa có
+- Anh: hiện tại chưa có
+
+### Day 6:
+#### Hôm qua mình làm gì ?
+- Mẫn: gộp và chỉnh sửa ui cho phù hợp chức năng
+- Minh: hoàn thiện chức năng chỉnh sửa tài khoản
 - Anh: thiết kế lại giao diện tổng thể phù hợp với trang đăng ký môn học
 #### Hôm nay mình làm được gì ?
 - Mẫn: hoàn thành chức năng login logout phù hợp giao diện
@@ -67,7 +95,7 @@
 - Minh: hiện tại chưa có
 - Anh: hiện tại chưa có
 
-### Day 6:
+### Day 7:
 #### Hôm qua mình làm gì ?
 - Mẫn: hoàn thành chức năng login logout phù hợp giao diện
 - Minh: cài đặt được chức năng lên giao diện
@@ -81,7 +109,7 @@
 - Minh: hiện tại chưa có
 - Anh: hiện tại chưa có
 
-### Day 7:
+### Day 8:
 #### Hôm qua mình làm gì ?
 - Mẫn: cấu trúc lại giao diện bằng decorator
 - Minh: sửa những lỗi xảy ra
@@ -95,7 +123,7 @@
 - Minh: khó khăn trong việc xây dựng database
 - Anh: hiện tại chưa có
 
-### Day 8:
+### Day 9:
 #### Hôm qua mình làm gì ?
 - Mẫn: cấu trúc lại giao diện bằng decorator
 - Minh: Xây dựng database, tạo tài khoản, hiên thị danh sách sinh viên
@@ -109,7 +137,7 @@
 - Minh: hiện tại chưa có khó khăn
 - Anh: hiện tại chưa có khó khăn
 
-### Day 9:
+### Day 10:
 #### Hôm qua mình làm gì ?
 - Mẫn: hoàn thành giao diện tạo đợt đăng ký, đăng ký đề tài và duyệt đề tài
 - Minh: cập nhật database, một phần chức năng đăng ký đề tài
@@ -123,7 +151,7 @@
 - Minh: hiện tại chưa có khó khăn
 - Anh: hiện tại chưa có khó khăn
 
-### Day 9:
+### Day 11:
 #### Hôm qua mình làm gì ?
 - Mẫn: không có nhiệm vụ 
 - Minh: cập nhật lại các chức năng trước trên giao diện, cài đặt chức năng đăng ký đề tài cho giảng viên
@@ -137,3 +165,16 @@
 - Minh: hiện tại chưa có khó khăn
 - Anh: kết nối với giao diện
 
+### Day 12:
+### Hôm qua mình làm gì ?
+- Mẫn: chỉnh sửa lại UI theo yêu cầu của team
+- Minh: hoàn thiện chức năng được giao nhưng còn thiếu một vài chức năng nhỏ
+- Anh: kết nối với giao diện nhưng chưa hoàn thành
+### Hôm nay mình làm được gì ?
+- Mẫn: test và chỉnh sửa chức năng của nhóm 
+- Minh: hoàn thiệt thiện hết chức năng
+- Anh: hoàn thành xong chức năng
+### Có khó khăn gì ?
+- Mẫn: hiện tại chưa có khó khăn
+- Minh: hiện tại chưa có khó khăn
+- Anh: kết nối với giao diện
