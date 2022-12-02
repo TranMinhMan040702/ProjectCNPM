@@ -24,6 +24,6 @@ public class GetAllProjectStudents extends HttpServlet {
         BrowseProjectService browseProjectService = new BrowseProjectService();
         List<ProjectStudentModel> projectStudentModelList = browseProjectService.getAllProjectStudentModels();
         request.setAttribute("projectStudentModelList", projectStudentModelList);
-        request.getRequestDispatcher("../views/truongbomon/censor-project.jsp").forward(request, response);
+        request.getRequestDispatcher("../views/user/truongbomon/censor-project.jsp").forward(request, response);
     }
 }

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(urlPatterns = {"/home", "/admin/home", "/sinhvien/home", "/giangvien/home",
-        "/truongbomon/home", "/admin/create-registration", "/sinhvien/registration",
+        "/truongbomon/home", "/sinhvien/registration",
          "/truongbomon/duyetdetai"}) //"/giangvien/registration",
 public class UserController extends HttpServlet {
     @Override
