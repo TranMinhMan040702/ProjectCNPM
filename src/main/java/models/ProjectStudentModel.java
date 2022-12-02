@@ -8,12 +8,17 @@ import javax.persistence.ManyToOne;
 import java.util.Date;
 
 public class ProjectStudentModel {
-
     private int id;
+
+    private User user;
+
+    private ProjectLecturers projectLecturers;
 
     private String status;
 
     private int point;
+
+    private Date createAt;
 
     public int getId() {
         return id;
@@ -21,6 +26,22 @@ public class ProjectStudentModel {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public ProjectLecturers getProjectLecturers() {
+        return projectLecturers;
+    }
+
+    public void setProjectLecturers(ProjectLecturers projectLecturers) {
+        this.projectLecturers = projectLecturers;
     }
 
     public String getStatus() {
@@ -46,6 +67,4 @@ public class ProjectStudentModel {
     public void setCreateAt(Date createAt) {
         this.createAt = createAt;
     }
-
-    private Date createAt;
 }

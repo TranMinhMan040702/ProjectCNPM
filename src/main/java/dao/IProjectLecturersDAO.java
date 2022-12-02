@@ -1,7 +1,7 @@
 package dao;
 
-import models.UserModel;
+import models.ProjectLecturersModel;
 
 public interface IProjectLecturersDAO {
-    void create();
+    void create(ProjectLecturersModel projectLecturersModel);
 }

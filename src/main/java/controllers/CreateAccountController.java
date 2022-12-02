@@ -21,11 +21,11 @@ public class CreateAccountController extends HttpServlet {
     IUserService userService = new UserService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        req.getRequestDispatcher("/views/admin/create-account.jsp").forward(req, resp);
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         UserModel userModel = new UserModel();
         try {
             //BeanUtils.populate(userModel, req.getParameterMap());

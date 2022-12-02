@@ -1,35 +1,57 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
-    <title>Đăng nhập</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
 </head>
 <body>
-<div class="wrapper fadeInDown">
-        <form action="edit" method="get">
-        <table>
-            <tr>
-                <td>Day</td>
-                <td>Start</td>
-                <td>End</td>
-                <td>Date</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td><select name="availableDay">
-                    <!--Listing days-->
-                </select></td>
-                <td><input type="time"   name="availableStart"/></td>
-                <td><input type="time"   name="availableEnd"/></td>
-                <td><input type="date"   name="availableDate"  value="${date1}"/></td>
-                <td><input type="submit" class="add" name="action" value="Add More" ></td>
-            </tr>
-        </table>
-        </form>
-
-</div>
+    <aside>
+        <div style="padding: 20px 50px 50px 50px">
+            <div class="signin-form">
+                <h2 class="form-title">Đăng nhập</h2>
+                <form method="post" class="register-form" id="login-form">
+                    <div class="form-group">
+                        <label>Tài khoản</label>
+                        <input
+                            type="text" class="form-control" placeholder="Tài khoản của bạn"
+                            required name="username" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Mật khẩu</label>
+                        <input type="password"
+                               class="form-control"
+                               placeholder="Mật khẩu của bạn"
+                               required name="password" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <iconify-icon icon="material-symbols:work"></iconify-icon>
+                            Chức vụ</label> <br>
+                        <label><input type="radio" name="role" value="sinhvien" > Sinh viên</label>
+                        <label><input type="radio" name="role" value="giangvien"> Giảng viên</label>
+                        <label><input type="radio" name="role" value="truongbomon"> Trưởng bộ môn</label>
+                        <label><input type="radio" name="role" value="admin"> Admin</label>
+                    </div>
+                    <!-- Nút nộp -->
+                    <div class="form-group">
+                        <button class="btn btn-success" formaction="<c:url value="/login"/> ">Đăng nhập</button>
+                        <button style="padding-left: 20px; padding-right: 20px;"
+                                class="btn btn-danger" onclick="Back(event)">Hủy
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </aside>
+<script>
+    function Back(e) {
+        e.preventDefault();
+        history.go(-1);
+    }
+</script>
 </body>
 </html>

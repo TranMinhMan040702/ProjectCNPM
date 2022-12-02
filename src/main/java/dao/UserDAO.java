@@ -67,6 +67,25 @@ public class UserDAO implements IUserDAO{
         return null;
     }
 
+    public void delete(String id) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+
+            User user = session.get(User.class, id);
+            if (user != null) {
+                session.delete(user);
+            }
+
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+    }
+
     public List<UserModel> getAll() {
         List<UserModel> userModels = new ArrayList<>();
         List<User> users = null;
@@ -88,15 +107,15 @@ public class UserDAO implements IUserDAO{
 
         return null;
     }
-
     @Override
-    public void update(User user) {
+    public void update(UserModel userModel) {
         Transaction transaction = null;
+        User user = new User();
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-
-
+            BeanUtils.copyProperties(user, userModel);
             session.update(user);
+
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();

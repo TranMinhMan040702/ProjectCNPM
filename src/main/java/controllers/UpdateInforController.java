@@ -2,6 +2,7 @@ package controllers;
 
 import models.UserModel;
 import service.UserService;
+import utils.SessionUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -41,11 +42,16 @@ public class UpdateInforController extends HttpServlet {
         }
         request.setAttribute("userModel", userModel);
         //request.getRequestDispatcher("/index.jsp").forward(request, response);
+
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         UserService userService = new UserService();
         userService.update(request,response);
-//        response.sendRedirect("/admin/account");
+        SessionUtil.getInstance().removeValue(request, "USERMODEL");
+        UserModel userModel = userService.getUser(request.getParameter("username"));
+        SessionUtil.getInstance().putValue(request, "USERMODEL", userModel);
+        response.sendRedirect("../account");
     }
 }

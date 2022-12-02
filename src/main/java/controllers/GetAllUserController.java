@@ -19,9 +19,11 @@ public class GetAllUserController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         UserService userService = new UserService();
         List<UserModel> userModelList= userService.getAllUser();
+        request.setAttribute("action", "create");
         request.setAttribute("userModelList", userModelList);
-        request.getRequestDispatcher("../views/admin/ManagerAccount.jsp").forward(request, response);
+        request.getRequestDispatcher("../views/admin/create-account.jsp").forward(request, response);
     }
 }

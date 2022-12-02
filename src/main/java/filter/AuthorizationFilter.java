@@ -1,6 +1,7 @@
 package filter;
 
 import models.LoginModel;
+import models.UserModel;
 import utils.SessionUtil;
 
 import javax.servlet.*;
@@ -30,12 +31,15 @@ public class AuthorizationFilter implements Filter {
         } else if (url.contains("truongbomon")) {
             checkAuthor(request, response, chain, "truongbomon");
         }
+        else {
+            chain.doFilter(request,response);
+        }
     }
 
     protected void checkAuthor(ServletRequest request, ServletResponse response, FilterChain chain, String role) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
-        LoginModel model = (LoginModel) SessionUtil.getInstance().getValue(req, "USERMODEL");
+        UserModel model = (UserModel) SessionUtil.getInstance().getValue(req, "USERMODEL");
         if (model != null) {
             if (model.getRole().equals(role)) {
                 chain.doFilter(request,response);
