@@ -75,6 +75,22 @@ public class ProjectStudentDAO implements IProjectStudentDAO{
         }
     }
 
+    public void update(ProjectStudentModel projectStudentModel){
+        Transaction transaction = null;
+        ProjectStudent projectStudent = new ProjectStudent();
+        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            BeanUtils.copyProperties(projectStudent, projectStudentModel);
+            session.update(projectStudent);
+
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+    }
     public static void main(String[] args) {
         ProjectStudentService projectStudentService = new ProjectStudentService();
         ProjectStudentModel projectStudentModel = projectStudentService.Get("20110677");

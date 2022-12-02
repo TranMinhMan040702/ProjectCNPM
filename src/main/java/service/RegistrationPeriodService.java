@@ -65,4 +65,8 @@ public class RegistrationPeriodService implements IRegistrationPeriodService {
     public List<RegistrationPeriodModel> getAll() {
         return registrationPeriodDAO.getAll();
     }
+
+    public RegistrationPeriodModel getByRole(String role){
+        return registrationPeriodDAO.getByRole(role);
+    }
 }

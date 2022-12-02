@@ -53,7 +53,7 @@ public class BrowseProjectDAO implements IBrowseProjectDAO {
             projectStudents = session.createQuery(criteriaQuery).getResultList();
             for(ProjectStudent pro: projectStudents){
                 ProjectStudentModel projectStudentModel = new ProjectStudentModel();
-                BeanUtils.copyProperties(projectStudentModels, pro);
+                BeanUtils.copyProperties(projectStudentModel, pro);
                 projectStudentModels.add(projectStudentModel);
             }
             return projectStudentModels;
@@ -61,5 +61,11 @@ public class BrowseProjectDAO implements IBrowseProjectDAO {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void main(String[] args) {
+        BrowseProjectDAO browseProjectDAO = new BrowseProjectDAO();
+        List<ProjectStudentModel> projectStudentModels = browseProjectDAO.getAll();
+
     }
 }

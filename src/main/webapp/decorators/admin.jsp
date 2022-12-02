@@ -17,7 +17,7 @@
             <div class="col-9">
                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<c:url value="/admin/home"/> ">Home</a></li>
                     </ol>
                 </nav>
                 <dec:body/>

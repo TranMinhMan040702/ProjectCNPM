@@ -18,7 +18,6 @@ pageEncoding="UTF-8" %> <%@include file="/common/taglib.jsp"%>
             <div class="row">
                 <div class="form-group col-6">
                     <label>Chọn ngày bắt đầu</label>
-
                     <input
                         class="form-control"
                         type="date"
@@ -69,17 +68,8 @@ pageEncoding="UTF-8" %> <%@include file="/common/taglib.jsp"%>
                             <td>${regis.startday}</td>
                             <td>${regis.endday}</td>
                             <td>
-                                <div
-                                    class="d-flex justify-content-around align-items-center"
-                                >
-                                    <a href="">
-                                        <i
-                                            class="fa-solid fa-pen-to-square"
-                                        ></i>
-                                    </a>
-                                    <a
-                                        href="http://localhost:8080/ProjectCNPM_master_war/admin/create-registration/delete?id=${regis.id}"
-                                    >
+                                <div class="d-flex justify-content-around align-items-center">
+                                    <a href="<c:url value="/admin/create-registration/delete?id=${regis.id}"/>">
                                         <i class="fa-solid fa-trash"></i>
                                     </a>
                                 </div>

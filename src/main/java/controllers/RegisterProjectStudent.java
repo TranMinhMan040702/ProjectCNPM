@@ -5,10 +5,12 @@ import entity.ProjectLecturers;
 import entity.User;
 import models.ProjectLecturersModel;
 import models.ProjectStudentModel;
+import models.RegistrationPeriodModel;
 import models.UserModel;
 import org.apache.commons.beanutils.BeanUtils;
 import service.ProjectLecturersService;
 import service.ProjectStudentService;
+import service.RegistrationPeriodService;
 import service.UserService;
 import utils.SessionUtil;
 
@@ -53,10 +55,9 @@ public class RegisterProjectStudent extends HttpServlet {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss ");
         //Date date = formatter;
         String time = current.format(formatter);
-        System.out.println(time);
+        Date date2;
         try {
-            Date date2= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ").parse(time);
-            System.out.println(date2);
+            date2= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ").parse(time);
             projectStudentModel.setCreateAt(date2);
 
         } catch (ParseException e) {
@@ -67,7 +68,16 @@ public class RegisterProjectStudent extends HttpServlet {
         projectStudentModel.setProjectLecturers(projectLecturers);
 
         ProjectStudentService projectStudentService = new ProjectStudentService();
-        projectStudentService.create(projectStudentModel);
-        response.sendRedirect("../registration/change");
+
+        RegistrationPeriodService registrationPeriodService = new RegistrationPeriodService();
+        RegistrationPeriodModel registrationPeriodModel = registrationPeriodService.getByRole(userModel.getRole());
+        if ((date2.after(registrationPeriodModel.getStartday()) && date2.before(registrationPeriodModel.getEndday())) && registrationPeriodModel != null)
+        {
+            projectStudentService.create(projectStudentModel);
+            response.sendRedirect(request.getContextPath()+"/sinhvien/registration/change");
+        }
+        else {
+            response.sendRedirect(request.getContextPath()+"/sinhvien/registration/change?message=register_error");
+        }
     }
 }

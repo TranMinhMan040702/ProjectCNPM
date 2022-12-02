@@ -40,4 +40,8 @@ public class ProjectStudentService implements IProjectStudentService {
         }
         return null;
     }
+    public void update(ProjectStudentModel projectStudentModel) {
+        ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();
+        projectStudentDAO.update(projectStudentModel);
+    }
 }
