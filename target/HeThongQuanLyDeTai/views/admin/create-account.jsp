@@ -14,7 +14,7 @@
         <div class="row">
             <div class="form-group col-6">
                 <label>Tài khoản</label>
-                <input id="a" type="text" class="form-control" placeholder="Tên tài khoản" required name="username" value="<c:if test = "${check == 'update'}">${user.username}</c:if>" <c:if test = "${check == 'update'}">disabled</c:if>>
+                <input id="a" type="text" class="form-control" placeholder="Tên tài khoản" required name="username" value="<c:if test = "${check == 'update'}">${user.username}</c:if>" <c:if test = "${check == 'update'}">readonly</c:if>>
             </div>
             <div class="form-group col-6">
                 <label>Mật khẩu</label>
