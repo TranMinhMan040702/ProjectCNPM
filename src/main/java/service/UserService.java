@@ -16,8 +16,8 @@ import java.util.List;
 public class UserService implements IUserService{
     IUserDAO userDAO = new UserDAO();
     @Override
-    public LoginModel login(String username, String password) {
-        return userDAO.login(username, password);
+    public LoginModel login(String username, String password, String role) {
+        return userDAO.login(username, password, role);
     }
 
     public UserModel getUser (String username){
