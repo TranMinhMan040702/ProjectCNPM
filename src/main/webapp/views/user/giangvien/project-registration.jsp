@@ -7,10 +7,19 @@
 </head>
 <body>
 <div>
+    <c:if test="${not empty message}">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Không nằm trong thời gian đăng ký</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div
+    </c:if>
     <c:set var = "check" scope = "session" value = "${action}"/>
-  <h5 class="form-title" style="font-weight: bold">Đăng ký đề tài</h5>
+
     <form <c:if test = "${check == 'create'}"> action="registration/create" method="post" </c:if>
             <c:if test = "${check == 'update'}"> action="../registration/update" method="post" </c:if>>
+        <h5 style="font-weight: bold" >Đăng ký đề tài</h5>
     <div class="form-group">
       <div class="row">
           <input name="id" value="${projectLecturersModel.id}" hidden>
@@ -85,10 +94,10 @@
         <td>${p.request}</td>
         <td>
             <div class="d-flex justify-content-around align-items-center">
-                <a href="http://localhost:8080/ProjectCNPM_war/giangvien/registration/update?id=${p.id}">
+                <a href="<c:url value="/giangvien/registration/update?id=${p.id}"/>">
                     <i class="fa-solid fa-pen-to-square"></i>
                 </a>
-                <a href="http://localhost:8080/ProjectCNPM_war/giangvien/registration/delete?id=${p.id}">
+                <a href="<c:url value="/giangvien/registration/delete?id=${p.id}"/>">
                     <i class="fa-solid fa-trash"></i>
                 </a>
             </div>

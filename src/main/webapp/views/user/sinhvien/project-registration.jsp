@@ -6,21 +6,29 @@
     <title>Title</title>
 </head>
 <body>
+<c:if test="${not empty message}">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Không nằm trong thời gian đăng ký</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div
+</c:if>
+<div>
   <div class="row mb-3">
-    <div class="form-group col-6">
-      <form name="form1" action="http://localhost:8080/ProjectCNPM_war/sinhvien/registration/change" method="get">
-        <h5 style="font-weight: bold">Chọn chuyên ngành</h5>
-        <select name="department" class="form-control" onchange="document.form1.submit();">
-          <option value="" selected disabled hidden>Chọn khoa</option>
-          <option value="Công nghệ thông tin">Công nghệ thông tin</option>
-          <option value="Kinh tế">Kinh tế</option>
-          <option value="Xây dựng">Xây dựng</option>
-        </select>
-      </form>
-    </div>
+  <div class="form-group col-6">
+    <form name="form1" action="http://localhost:8080/ProjectCNPM_war/sinhvien/registration/change" method="get">
+    <h5 style="font-weight: bold">Chọn chuyên ngành</h5>
+    <select name="department" class="form-control" onchange="document.form1.submit();">
+      <option value="" selected disabled hidden>Chọn khoa</option>
+      <option value="Công nghệ thông tin">Công nghệ thông tin</option>
+      <option value="Kinh tế">Kinh tế</option>
+      <option value="Xây dựng">Xây dựng</option>
+    </select>
+    </form>
   </div>
 
-<div>
+
   <c:set var = "check" scope = "session" value = "${projectStudentModel}"/>
   <c:if test = "${check == null}">
   <h5 style="font-weight: bold">Danh sách đề tài khoa ${department}</h5>
@@ -93,6 +101,7 @@
       </div>
     </form>
   </c:if>
+</div>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="modalRegistration" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

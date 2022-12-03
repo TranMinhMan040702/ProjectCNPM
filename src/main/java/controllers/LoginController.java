@@ -26,6 +26,7 @@ public class LoginController extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/home");
         }
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = req.getRequestURL().toString();

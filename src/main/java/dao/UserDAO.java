@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO implements IUserDAO{
+
     @Override
     public LoginModel login(String username, String password, String role) {
         LoginModel loginModel = new LoginModel();
