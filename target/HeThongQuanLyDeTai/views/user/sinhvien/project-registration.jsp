@@ -6,20 +6,6 @@
     <title>Title</title>
 </head>
 <body>
-<<<<<<< HEAD
-  <div class="row mb-3">
-    <div class="form-group col-6">
-      <form name="form1" action="http://localhost:8080/ProjectCNPM_war/sinhvien/registration/change" method="get">
-        <h5 style="font-weight: bold">Chọn chuyên ngành</h5>
-        <select name="department" class="form-control" onchange="document.form1.submit();">
-          <option value="" selected disabled hidden>Chọn khoa</option>
-          <option value="Công nghệ thông tin">Công nghệ thông tin</option>
-          <option value="Kinh tế">Kinh tế</option>
-          <option value="Xây dựng">Xây dựng</option>
-        </select>
-      </form>
-    </div>
-=======
 <c:if test="${not empty message}">
   <div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>Không nằm trong thời gian đăng ký</strong>
@@ -29,7 +15,7 @@
   </div
 </c:if>
 <div>
-<div class="row mb-3">
+  <div class="row mb-3">
   <div class="form-group col-6">
     <form name="form1" action="http://localhost:8080/ProjectCNPM_war/sinhvien/registration/change" method="get">
     <h5 style="font-weight: bold">Chọn chuyên ngành</h5>
@@ -40,10 +26,9 @@
       <option value="Xây dựng">Xây dựng</option>
     </select>
     </form>
->>>>>>> e824c90fa1218636bfd0dac314dcae1743e6b165
   </div>
 
-<div>
+
   <c:set var = "check" scope = "session" value = "${projectStudentModel}"/>
   <c:if test = "${check == null}">
   <h5 style="font-weight: bold">Danh sách đề tài khoa ${department}</h5>
