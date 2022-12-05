@@ -31,10 +31,10 @@
                         <label>
                             <iconify-icon icon="material-symbols:work"></iconify-icon>
                             Chức vụ</label> <br>
-                        <label><input type="radio" name="role" value="sinhvien" > Sinh viên</label>
-                        <label><input type="radio" name="role" value="giangvien"> Giảng viên</label>
-                        <label><input type="radio" name="role" value="truongbomon"> Trưởng bộ môn</label>
-                        <label><input type="radio" name="role" value="admin"> Admin</label>
+                        <label><input type="radio" name="role" value="sinhvien" required> Sinh viên</label>
+                        <label><input type="radio" name="role" value="giangvien" required> Giảng viên</label>
+                        <label><input type="radio" name="role" value="truongbomon" required> Trưởng bộ môn</label>
+                        <label><input type="radio" name="role" value="admin" required> Admin</label>
                     </div>
                     <!-- Nút nộp -->
                     <div class="form-group">

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/login", "/logout", "/trang-chu"})
+@WebServlet(urlPatterns = {"/login", "/logout"})
 public class LoginController extends HttpServlet {
     IUserService userService = new UserService();
     @Override
