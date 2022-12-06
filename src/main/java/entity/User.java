@@ -47,6 +47,9 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<ProjectStudent> projectStudents;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<StudentGroup> studentGroups;
+
 
     public String getUsername(){
         return username;
@@ -150,5 +153,13 @@ public class User {
 
     public void setProjectStudents(List<ProjectStudent> projectStudents) {
         this.projectStudents = projectStudents;
+    }
+
+    public List<StudentGroup> getStudentGroups() {
+        return studentGroups;
+    }
+
+    public void setStudentGroups(List<StudentGroup> studentGroups) {
+        this.studentGroups = studentGroups;
     }
 }
