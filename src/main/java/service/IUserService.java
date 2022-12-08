@@ -10,8 +10,7 @@ import java.util.List;
 public interface IUserService {
     LoginModel login(String username, String password, String role);
 
-    UserModel getUser(String username);
-
+    UserModel getUser (String username);
     void create(UserModel userModel);
 
     void update(HttpServletRequest request, HttpServletResponse response);

@@ -13,7 +13,7 @@ public class Council {
     private int id;
 
     @ManyToOne
-    private ProjectLecturers projectLecturers;
+    private ProjectStudent projectLecturers;
 
     @Column
     private int numberLecturers;
@@ -32,11 +32,12 @@ public class Council {
         this.id = id;
     }
 
-    public ProjectLecturers getProjectLecturers() {
+
+    public ProjectStudent getProjectLecturers() {
         return projectLecturers;
     }
 
-    public void setProjectLecturers(ProjectLecturers projectLecturers) {
+    public void setProjectLecturers(ProjectStudent projectLecturers) {
         this.projectLecturers = projectLecturers;
     }
 

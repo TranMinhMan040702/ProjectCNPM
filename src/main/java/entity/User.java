@@ -51,6 +51,9 @@ public class User {
     private List<StudentGroup> studentGroups;
 
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<MemberCouncil> memberCouncils;
+
     public String getUsername(){
         return username;
     }
@@ -161,5 +164,13 @@ public class User {
 
     public void setStudentGroups(List<StudentGroup> studentGroups) {
         this.studentGroups = studentGroups;
+    }
+
+    public List<MemberCouncil> getMemberCouncils() {
+        return memberCouncils;
+    }
+
+    public void setMemberCouncils(List<MemberCouncil> memberCouncils) {
+        this.memberCouncils = memberCouncils;
     }
 }

@@ -168,8 +168,6 @@
     </div>
 </div>
 
-<c:url value="/truongbomon/browse-project/update?action=tuchoi&id=${projS.id}" var="urlDeny"/>
-
 <script>
     function Deny(){
         window.location.href = "${urlDeny}";
