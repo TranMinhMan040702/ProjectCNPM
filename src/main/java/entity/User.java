@@ -50,10 +50,11 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<StudentGroup> studentGroups;
 
-
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<MemberCouncil> memberCouncils;
 
+    @OneToMany(mappedBy = "leader", cascade = CascadeType.ALL)
+    private List<Council> councils;
     public String getUsername(){
         return username;
     }

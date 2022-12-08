@@ -1,13 +1,14 @@
 package models;
 
 import entity.ProjectLecturers;
+import entity.ProjectStudent;
 
 import java.util.Date;
 
 public class CouncilModel {
     private int id;
 
-    private ProjectLecturers projectLecturers;
+    private ProjectStudent projectStudent;
 
     private int numberLecturers;
 
@@ -21,12 +22,12 @@ public class CouncilModel {
         this.id = id;
     }
 
-    public ProjectLecturers getProjectLecturers() {
-        return projectLecturers;
+    public ProjectStudent getProjectStudent() {
+        return projectStudent;
     }
 
-    public void setProjectLecturers(ProjectLecturers projectLecturers) {
-        this.projectLecturers = projectLecturers;
+    public void setProjectStudent(ProjectStudent projectStudent) {
+        this.projectStudent = projectStudent;
     }
 
     public int getNumberLecturers() {

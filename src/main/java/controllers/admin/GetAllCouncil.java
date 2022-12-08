@@ -2,8 +2,10 @@ package controllers.admin;
 
 import models.CouncilModel;
 import models.ProjectLecturersModel;
+import models.ProjectStudentModel;
 import service.CouncilService;
 import service.ProjectLecturersService;
+import service.ProjectStudentService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,12 +19,14 @@ import java.util.List;
 public class GetAllCouncil extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         CouncilService councilService = new CouncilService();
-        ProjectLecturersService projectLecturersService = new ProjectLecturersService();
+        ProjectStudentService projectStudentService = new ProjectStudentService();
         List<CouncilModel> councilModelList = councilService.ListCouncil();
-        List<ProjectLecturersModel> projectLecturersModels = projectLecturersService.GetAll();
-        System.out.println(projectLecturersModels);
-        request.setAttribute("projectlecturers", projectLecturersModels);
+        List<ProjectStudentModel> projectLecturersModels = projectStudentService.GetListByStatusArgument("No", "Đã được duyệt");
+        //System.out.println(projectLecturersModels);
+        request.setAttribute("action", "create");
+        request.setAttribute("project", projectLecturersModels);
         request.setAttribute("councilList", councilModelList);
         request.getRequestDispatcher("../views/admin/manager-council.jsp").forward(request, response);;
     }

@@ -19,4 +19,18 @@ public class CouncilService implements ICouncilService{
         CouncilDAO councilDAO = new CouncilDAO();
         councilDAO.create(councilModel);
     }
+    public void delete(int id, int idProject){
+        CouncilDAO councilDAO = new CouncilDAO();
+        councilDAO.delete(id, idProject);
+    }
+
+    public CouncilModel get(int id){
+        CouncilDAO councilDAO = new CouncilDAO();
+        return councilDAO.get(id);
+    }
+
+    public void update(CouncilModel councilModel){
+        CouncilDAO councilDAO = new CouncilDAO();
+        councilDAO.update(councilModel);
+    }
 }

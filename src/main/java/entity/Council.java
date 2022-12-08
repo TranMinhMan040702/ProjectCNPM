@@ -13,13 +13,16 @@ public class Council {
     private int id;
 
     @ManyToOne
-    private ProjectStudent projectLecturers;
+    private ProjectStudent projectStudent;
 
     @Column
     private int numberLecturers;
 
     @Column
     private Date dateCounterArgument;
+
+    @ManyToOne
+    private User leader;
 
     @OneToMany(mappedBy = "council", cascade = CascadeType.ALL)
     private List<MemberCouncil> memberCouncils;
@@ -32,13 +35,12 @@ public class Council {
         this.id = id;
     }
 
-
-    public ProjectStudent getProjectLecturers() {
-        return projectLecturers;
+    public ProjectStudent getProjectStudent() {
+        return projectStudent;
     }
 
-    public void setProjectLecturers(ProjectStudent projectLecturers) {
-        this.projectLecturers = projectLecturers;
+    public void setProjectStudent(ProjectStudent projectStudent) {
+        this.projectStudent = projectStudent;
     }
 
     public int getNumberLecturers() {

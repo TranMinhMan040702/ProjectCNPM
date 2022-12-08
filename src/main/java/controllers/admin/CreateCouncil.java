@@ -1,11 +1,14 @@
 package controllers.admin;
 
 import entity.ProjectLecturers;
+import entity.ProjectStudent;
 import models.CouncilModel;
 import models.ProjectLecturersModel;
+import models.ProjectStudentModel;
 import org.apache.commons.beanutils.BeanUtils;
 import service.CouncilService;
 import service.ProjectLecturersService;
+import service.ProjectStudentService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,12 +30,12 @@ public class CreateCouncil extends HttpServlet {
         int numberLecturers = Integer.parseInt(request.getParameter("numberLecturers"));
         String date = request.getParameter("date");
         System.out.println(date);
-        ProjectLecturersService projectLecturersService = new ProjectLecturersService();
-        ProjectLecturersModel projectLecturersModel = projectLecturersService.getUser(projectid);
-        ProjectLecturers projectLecturers = new ProjectLecturers();
+        ProjectStudentService projectStudentService = new ProjectStudentService();
+        ProjectStudentModel projectStudentModel = projectStudentService.getStudent(projectid);
+        ProjectStudent projectStudent = new ProjectStudent();
         try {
-            BeanUtils.copyProperties(projectLecturers, projectLecturersModel);
-            councilModel.setProjectLecturers(projectLecturers);
+            BeanUtils.copyProperties(projectStudent, projectStudentModel);
+            councilModel.setProjectStudent(projectStudent);
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         } catch (InvocationTargetException e) {

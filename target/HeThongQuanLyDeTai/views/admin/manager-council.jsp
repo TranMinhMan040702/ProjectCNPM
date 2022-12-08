@@ -6,16 +6,23 @@
     <title>Title</title>
 </head>
 <body>
-<form class="mb-5" action="council/create" method="post">
+<c:set var = "check" scope = "session" value = "${action}"/>
+<form class="mb-5" <c:if test = "${check == 'create'}"> action="council/create" method="post"</c:if>
+        <c:if test="${check == 'update'}">action="../council/update" method="post"</c:if>>>
   <label>Đề tài phản biện</label>
   <div class="form-group row">
     <div class="col-6">
       <%-- load đề tài ra nhé     --%>
+      <c:if test = "${check == 'update'}">
+        <input>
+      </c:if>
+      <c:if test = "${check == 'create'}">
       <select class="custom-select" name="projectid" id="">
-        <c:forEach var="project" items="${projectlecturers}">
-        <option value="${project.id}">${project.topic}</option>
+        <c:forEach var="project" items="${project}">
+        <option value="${project.id}">${project.projectLecturers.topic} - ${project.user.username}</option>
         </c:forEach>
       </select>
+      </c:if>
     </div>
   </div>
   <div class="row">
@@ -25,7 +32,7 @@
               class="form-control"
               type="number"
               name="numberLecturers"
-              value=""
+              value="<c:if test = "${check == 'update'}">${council.numberLecturers}</c:if>"
               required
       />
     </div>
@@ -35,7 +42,7 @@
               class="form-control"
               type="date"
               name="date"
-              value=""
+              value="<c:if test = "${check == 'update'}">${date}</c:if>"
               required
       />
     </div>
@@ -55,6 +62,7 @@
     <tr>
       <th scope="col">MHĐ</th>
       <th scope="col">Đề tài phản biện</th>
+      <th scope="col">Username</th>
       <th scope="col">SLGV</th>
       <th scope="col">Ngày phản biện</th>
       <th scope="col">Thao tác</th>
@@ -64,15 +72,16 @@
     <c:forEach var="councilList" items="${councilList}">
       <tr>
         <td>${councilList.id}</td>
-        <td>${councilList.projectLecturers.topic}</td>
+        <td>${councilList.projectStudent.projectLecturers.topic}</td>
+        <td>${councilList.projectStudent.user.username}</td>
         <td>${councilList.numberLecturers}</td>
         <td>${councilList.dateCounterArgument}</td>
         <td>
           <div class="d-flex justify-content-around align-items-center">
-            <a href="<c:url value="/admin/create-registration/delete?id=${regis.id}"/>">
+            <a href="<c:url value="/admin/council/update?id=${councilList.id}"/>">
               <i class="fa-solid fa-pen-to-square"></i>
             </a>
-            <a href="<c:url value="/admin/create-registration/delete?id=${regis.id}"/>">
+            <a href="<c:url value="/admin/council/delete?id=${councilList.id}&idProject=${councilList.projectStudent.id}"/>">
               <i class="fa-solid fa-trash"></i>
             </a>
           </div>
