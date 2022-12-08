@@ -4,10 +4,11 @@
 <article>
   <div id="menu">
     <ul style="width: 200px; background-color: #f8f9fa;">
-      <li><a href="<c:url value="/home"/>">Trang chủ</a></li>
+      <li><a href="<c:url value="/truongbomon/home"/>">Trang chủ</a></li>
       <li><a href="<c:url value="/truongbomon/account"/> ">Thông tin cá nhân</a></li>
-      <li><a href="<c:url value="/truongbomon/duyetdetai"/>">Duyệt đề tài</a></li>
-      <li><a href="#">Tìm kiếm</a></li>
+      <li><a href="<c:url value="/truongbomon/browse-project"/>">Duyệt đề tài</a></li>
+      <li><a href="<c:url value="/truongbomon/manager-council"/>">Quản lý hội đồng</a></li>
+      <li><a href="<c:url value="/truongbomon/manager-group"/>">Quản lý nhóm</a></li>
     </ul>
   </div>
 </article>

@@ -1,4 +1,4 @@
-package controllers;
+package controllers.sinhvien;
 
 import models.ProjectLecturersModel;
 import models.ProjectStudentModel;
@@ -31,6 +31,8 @@ public class ChangeDepartmentController extends HttpServlet {
         request.setAttribute("projectLecturersModels", projectLecturersModels);
         request.setAttribute("department", department);
         request.setAttribute("projectStudentModel", projectStudentModel);
+        String message = request.getParameter("message");
+        request.setAttribute("message", message);
         System.out.println(projectStudentModel);
         request.getRequestDispatcher("/views/user/sinhvien/project-registration.jsp").forward(request, response);
     }

@@ -1,4 +1,4 @@
-package controllers;
+package controllers.admin;
 
 import models.ProjectLecturersModel;
 import models.UserModel;
@@ -38,6 +38,7 @@ public class UpdateUserController extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String username = request.getParameter("username");
+        System.out.println(username);
         UserService userService = new UserService();
         UserModel userModel = userService.getUser(username.trim());
         userModel.setPassword(request.getParameter("password"));

@@ -1,4 +1,4 @@
-package controllers;
+package controllers.sinhvien;
 
 import dao.ProjectLecturersDAO;
 import dao.ProjectStudentDAO;

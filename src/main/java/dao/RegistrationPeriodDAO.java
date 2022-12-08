@@ -110,5 +110,18 @@ public class RegistrationPeriodDAO implements IRegistrationPeriodDAO{
         }
     }
 
+    public RegistrationPeriodModel getByRole(String role) {
+        RegistrationPeriodModel registrationPeriodModel = new RegistrationPeriodModel();
+        RegistrationPeriod registrationPeriod = null;
+        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
 
+            registrationPeriod = session.createQuery("From RegistrationPeriod as  c WHERE c.role = :role", RegistrationPeriod.class).setParameter("role", role).uniqueResult();
+            BeanUtils.copyProperties(registrationPeriodModel, registrationPeriod);
+            return  registrationPeriodModel;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

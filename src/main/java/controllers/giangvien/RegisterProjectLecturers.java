@@ -1,11 +1,13 @@
-package controllers;
+package controllers.giangvien;
 
 import dao.ProjectLecturersDAO;
 import entity.User;
 import models.ProjectLecturersModel;
+import models.RegistrationPeriodModel;
 import models.UserModel;
 import org.apache.commons.beanutils.BeanUtils;
 import service.ProjectLecturersService;
+import service.RegistrationPeriodService;
 import service.UserService;
 import utils.SessionUtil;
 
@@ -40,9 +42,9 @@ public class RegisterProjectLecturers extends HttpServlet {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss ");
         //Date date = formatter;
         String time = current.format(formatter);
-        System.out.println(time);
+        Date date2;
         try {
-            Date date2= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ").parse(time);
+            date2= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ").parse(time);
             System.out.println(date2);
             projectLecturersModel.setCreateAt(date2);
 
@@ -55,7 +57,17 @@ public class RegisterProjectLecturers extends HttpServlet {
         projectLecturersModel.setRequest(request.getParameter("request"));
         projectLecturersModel.setTarget(request.getParameter("target"));
         ProjectLecturersService projectLecturersService = new ProjectLecturersService();
-        projectLecturersService.create(projectLecturersModel);
-        response.sendRedirect("../registration");
+
+        RegistrationPeriodService registrationPeriodService = new RegistrationPeriodService();
+        RegistrationPeriodModel registrationPeriodModel = registrationPeriodService.getByRole(userModel.getRole());
+        if ((date2.after(registrationPeriodModel.getStartday()) && date2.before(registrationPeriodModel.getEndday())) && registrationPeriodModel != null)
+        {
+            projectLecturersService.create(projectLecturersModel);
+            response.sendRedirect(request.getContextPath()+"/giangvien/registration");
+        }
+        else {
+            response.sendRedirect(request.getContextPath()+"/giangvien/registration?message=register_error");
+        }
+
     }
 }

@@ -20,6 +20,12 @@ public class RegistrationPeriod {
     @Column
     private String role;
 
+    @Column
+    private String department;
+
+    @Column
+    private String title;
+
     public int getId() {
         return id;
     }
@@ -50,5 +56,21 @@ public class RegistrationPeriod {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

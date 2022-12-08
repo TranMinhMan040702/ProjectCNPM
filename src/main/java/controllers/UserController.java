@@ -9,7 +9,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = {"/home", "/admin/home", "/sinhvien/home", "/giangvien/home",
         "/truongbomon/home", "/sinhvien/registration",
-         }) //"/giangvien/registration",
+         "/truongbomon/duyetdetai"}) //"/giangvien/registration",
 public class UserController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -23,8 +23,10 @@ public class UserController extends HttpServlet {
             req.getRequestDispatcher("/views/user/sinhvien/project-registration.jsp").forward(req, resp);
         } else if (url.contains("giangvien/registration")) {
             req.getRequestDispatcher("/views/user/giangvien/project-registration.jsp").forward(req, resp);
-        } else if (url.contains("duyetdetai")) {
+        } else if (url.contains("/truongbomon/duyetdetai")) {
             req.getRequestDispatcher("/views/user/truongbomon/censor-project.jsp").forward(req, resp);
+        } else if (url.contains("/giangvien/review")) {
+            req.getRequestDispatcher("/views/user/truongbomon/review.jsp").forward(req, resp);
         }
     }
 }

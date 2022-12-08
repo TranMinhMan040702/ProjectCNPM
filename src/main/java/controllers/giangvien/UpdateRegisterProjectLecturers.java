@@ -1,4 +1,4 @@
-package controllers;
+package controllers.giangvien;
 
 import models.ProjectLecturersModel;
 import models.UserModel;

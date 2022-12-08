@@ -1,7 +1,8 @@
-package controllers;
+package controllers.admin;
 
 import models.RegistrationPeriodModel;
 import service.RegistrationPeriodService;
+import utils.SessionUtil;
 
 import javax.persistence.Column;
 import javax.servlet.ServletException;
@@ -30,9 +31,10 @@ public class CreateRegistrationPeriod extends HttpServlet {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
+        String username = SessionUtil.getInstance().getValue(req, "").toString();
+        System.out.println(username);
         registrationPeriodModel.setRole(req.getParameter("role"));
         registrationPeriodService.create(registrationPeriodModel);
-        System.out.println("chạy");
         resp.sendRedirect("../admin/create-registration");
     }
 }

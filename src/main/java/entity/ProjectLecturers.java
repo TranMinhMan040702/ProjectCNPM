@@ -32,6 +32,8 @@ public class ProjectLecturers {
 
     @OneToMany(mappedBy = "projectLecturers", cascade = CascadeType.ALL)
     private List<ProjectStudent> projectStudents;
+
+
     public int getId() {
         return id;
     }
@@ -96,4 +98,5 @@ public class ProjectLecturers {
     public void setRequest(String request) {
         this.request = request;
     }
+
 }

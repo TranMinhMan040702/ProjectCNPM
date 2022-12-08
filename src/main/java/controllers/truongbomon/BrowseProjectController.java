@@ -1,4 +1,4 @@
-package controllers;
+package controllers.truongbomon;
 
 import models.ProjectStudentModel;
 import service.BrowseProjectService;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-//@WebServlet(urlPatterns = {"/truongbomon/browseproject"})
+@WebServlet(urlPatterns = {"/truongbomon/browseproject"})
 public class BrowseProjectController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,6 +31,6 @@ public class BrowseProjectController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BrowseProjectService browseProjectService = new BrowseProjectService();
         browseProjectService.update(req, resp);
-        resp.sendRedirect("../browse-project");
+        resp.sendRedirect("../truongbomon/browse-project");
     }
 }

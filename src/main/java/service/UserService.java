@@ -4,7 +4,6 @@ import dao.IUserDAO;
 import dao.UserDAO;
 import models.LoginModel;
 import models.UserModel;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,8 +15,8 @@ import java.util.List;
 public class UserService implements IUserService {
     IUserDAO userDAO = new UserDAO();
     @Override
-    public LoginModel login(String username, String password) {
-        return userDAO.login(username, password);
+    public LoginModel login(String username, String password, String role) {
+        return userDAO.login(username, password, role);
     }
 
     @Override

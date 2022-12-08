@@ -2,6 +2,7 @@ package entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "ProjectStudent")
@@ -22,9 +23,30 @@ public class ProjectStudent {
 
     @Column
     private int point;
+    @Column
+    private String review;
+
+    public Council getCouncil() {
+        return council;
+    }
+
+    public void setCouncil(Council council) {
+        this.council = council;
+    }
+
+    public String getReview() {
+        return review;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
+    }
 
     @Column
     private Date createAt;
+
+    @ManyToOne
+    private Council council;
 
     public int getId() {
         return id;

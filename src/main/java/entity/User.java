@@ -47,6 +47,9 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<ProjectStudent> projectStudents;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<MemberCouncil> memberCouncils;
+
 
     public String getUsername(){
         return username;
@@ -78,6 +81,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<MemberCouncil> getMemberCouncils() {
+        return memberCouncils;
+    }
+
+    public void setMemberCouncils(List<MemberCouncil> memberCouncils) {
+        this.memberCouncils = memberCouncils;
     }
 
     public Date getBirthday() {

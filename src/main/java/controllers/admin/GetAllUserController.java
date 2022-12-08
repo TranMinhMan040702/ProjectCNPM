@@ -1,4 +1,4 @@
-package controllers;
+package controllers.admin;
 
 import models.UserModel;
 import service.UserService;

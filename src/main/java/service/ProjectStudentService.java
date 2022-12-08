@@ -4,10 +4,10 @@ import dao.ProjectStudentDAO;
 import entity.ProjectStudent;
 import models.ProjectLecturersModel;
 import models.ProjectStudentModel;
-import models.RegistrationPeriodModel;
 import org.apache.commons.beanutils.BeanUtils;
 import org.hibernate.Session;
 import utils.HibernateUtils;
+
 
 import java.util.List;
 
@@ -26,11 +26,6 @@ public class ProjectStudentService implements IProjectStudentService {
         ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();
         return projectStudentDAO.Get(user);
     }
-
-    public List<ProjectStudentModel> getAll() {
-        ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();
-        return projectStudentDAO.getAll();
-    }
     public ProjectStudentModel getStudent(int ID) {
         ProjectStudentModel projectStudentModel = new ProjectStudentModel();
         ProjectStudent projectStudent = null;
@@ -44,5 +39,9 @@ public class ProjectStudentService implements IProjectStudentService {
             e.printStackTrace();
         }
         return null;
+    }
+    public void update(ProjectStudentModel projectStudentModel) {
+        ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();
+        projectStudentDAO.update(projectStudentModel);
     }
 }

@@ -1,4 +1,4 @@
-package controllers;
+package controllers.giangvien;
 
 import dao.ProjectLecturersDAO;
 import models.ProjectLecturersModel;
@@ -25,6 +25,10 @@ public class ProjectLecturers extends HttpServlet {
         request.setAttribute("projectLecturersDAOS", projectLecturersModels);
         request.setAttribute("lecturers", userModel);
         request.setAttribute("action", "create");
+        String message = request.getParameter("message");
+        if(message != null){
+            request.setAttribute("message", message);
+        }
         request.getRequestDispatcher("/views/user/giangvien/project-registration.jsp").forward(request, response);
 
     }

@@ -1,4 +1,4 @@
-package controllers;
+package controllers.admin;
 
 import models.RegistrationPeriodModel;
 import service.RegistrationPeriodService;
