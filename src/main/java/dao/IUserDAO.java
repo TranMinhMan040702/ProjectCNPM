@@ -12,4 +12,6 @@ public interface IUserDAO {
     void update(UserModel user);
 
     List<UserModel> getAll();
+
+    List<UserModel> GetList(String username);
 }

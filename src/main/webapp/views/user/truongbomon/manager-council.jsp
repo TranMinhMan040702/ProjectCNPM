@@ -16,6 +16,8 @@
     </div
 </c:if>
 
+<c:set var = "check" scope = "session" value = "${action}"/>
+<c:if test="${check == 'list'}">
 <div>
     <h5 style="font-weight: bold">Danh sách hội đồng phản biện</h5>
     <table class="table">
@@ -30,32 +32,33 @@
         </tr>
         </thead>
         <tbody>
-        <%--    <c:forEach--%>
-        <%--            var="regis"--%>
-        <%--            items="${registrationPeriodModelList}"--%>
-        <%--    >--%>
+        <c:forEach
+                var="councilList"
+                items="${councilList}"
+        >
         <tr>
-            <td>1</td>
-            <td>Website đăng ký môn học</td>
-            <td>3</td>
-            <td>24-12-2022</td>
-            <td>Đã phân công</td>
+            <td>${councilList.id}</td>
+            <td>${councilList.projectStudent.projectLecturers.topic}</td>
+            <td>${councilList.numberLecturers}</td>
+            <td>${councilList.dateCounterArgument}</td>
+            <td>${councilList.status}</td>
             <td>
                 <div class="d-flex justify-content-around align-items-center">
                     <a class="btn btn-primary btn-sm"
-                       data-toggle="modal" data-target="#chon-giang-vien"
-                       href="<c:url value="/admin/create-registration/delete?id=${regis.id}"/>">
+<%--                       data-toggle="modal" data-target="#chon-giang-vien"--%>
+                       href="<c:url value="/truongbomon/council/create?id=${councilList.id}"/>">
                         Thêm giảng viên
                     </a>
                 </div>
             </td>
         </tr>
-        <%--    </c:forEach>--%>
+        </c:forEach>
         </tbody>
     </table>
 </div>
-
+</c:if>
 <%--Khi nao bấm thêm mới hiện danh sách giảng viên --%>
+<c:if test="${check == 'create'}">
 <div>
     <div class="mb-3">
         <h6 style="font-weight: bold">Tìm kiếm GV</h6>
@@ -75,14 +78,14 @@
         </tr>
         </thead>
         <tbody>
-        <%--    <c:forEach--%>
-        <%--            var="regis"--%>
-        <%--            items="${registrationPeriodModelList}"--%>
-        <%--    >--%>
+            <c:forEach
+                    var="lecturersList"
+                    items="${lecturersList}"
+            >
         <tr>
-            <td>30110301</td>
-            <td>Trần Công Minh</td>
-            <td>Công nghệ phần mền</td>
+            <td>${lecturersList.username}</td>
+            <td>${lecturersList.fullname}</td>
+            <td>${lecturersList.department}</td>
             <td>
                 <div class="d-flex justify-content-around align-items-center">
                     <a class="btn btn-primary btn-sm"
@@ -99,11 +102,11 @@
                 </div>
             </td>
         </tr>
-        <%--    </c:forEach>--%>
+            </c:forEach>
         </tbody>
     </table>
 </div>
-
+</c:if>
 <!-- Modal -->
 <div class="modal fade" id="xac-nhan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">

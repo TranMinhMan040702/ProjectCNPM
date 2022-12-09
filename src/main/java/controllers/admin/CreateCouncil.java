@@ -29,7 +29,6 @@ public class CreateCouncil extends HttpServlet {
         int projectid = Integer.parseInt(request.getParameter("projectid"));
         int numberLecturers = Integer.parseInt(request.getParameter("numberLecturers"));
         String date = request.getParameter("date");
-        System.out.println(date);
         ProjectStudentService projectStudentService = new ProjectStudentService();
         ProjectStudentModel projectStudentModel = projectStudentService.getStudent(projectid);
         ProjectStudent projectStudent = new ProjectStudent();
@@ -47,7 +46,7 @@ public class CreateCouncil extends HttpServlet {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("toi day 2");
+        councilModel.setStatus("Chưa phân công");
         councilModel.setNumberLecturers(numberLecturers);
         CouncilService councilService = new CouncilService();
         councilService.create(councilModel);

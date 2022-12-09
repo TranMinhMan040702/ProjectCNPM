@@ -57,4 +57,9 @@ public class UserService implements IUserService {
 
     @Override
     public List<UserModel> getAllUser(){return userDAO.getAll();}
+
+    public List<UserModel> getLecturers(String username)
+    {
+        return userDAO.GetList(username);
+    }
 }

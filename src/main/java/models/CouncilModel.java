@@ -2,6 +2,7 @@ package models;
 
 import entity.ProjectLecturers;
 import entity.ProjectStudent;
+import entity.User;
 
 import java.util.Date;
 
@@ -13,6 +14,10 @@ public class CouncilModel {
     private int numberLecturers;
 
     private Date dateCounterArgument;
+
+    private User leader;
+
+    private String status;
 
     public int getId() {
         return id;
@@ -44,5 +49,21 @@ public class CouncilModel {
 
     public void setDateCounterArgument(Date dateCounterArgument) {
         this.dateCounterArgument = dateCounterArgument;
+    }
+
+    public User getLeader() {
+        return leader;
+    }
+
+    public void setLeader(User leader) {
+        this.leader = leader;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

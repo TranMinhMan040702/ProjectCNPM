@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @WebServlet("/admin/council/update")
@@ -29,5 +31,23 @@ public class UpdateCouncil extends HttpServlet {
         request.setAttribute("action", "update");
         request.setAttribute("councilList", councilModelList);
         request.getRequestDispatcher("/views/admin/manager-council.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int projectid = Integer.parseInt(request.getParameter("projectid"));
+        int numberLecturers = Integer.parseInt(request.getParameter("numberLecturers"));
+        String date = request.getParameter("date");
+        CouncilService councilService = new CouncilService();
+        CouncilModel councilModel = councilService.get(projectid);
+        councilModel.setNumberLecturers(numberLecturers);
+        try {
+            Date date1= new SimpleDateFormat("yyyy-MM-dd").parse(date);
+            councilModel.setDateCounterArgument(date1);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        councilService.update(councilModel);
+        response.sendRedirect("../council");
     }
 }

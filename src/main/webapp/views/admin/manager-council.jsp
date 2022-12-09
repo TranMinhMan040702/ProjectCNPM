@@ -8,13 +8,21 @@
 <body>
 <c:set var = "check" scope = "session" value = "${action}"/>
 <form class="mb-5" <c:if test = "${check == 'create'}"> action="council/create" method="post"</c:if>
-        <c:if test="${check == 'update'}">action="../council/update" method="post"</c:if>>>
+        <c:if test="${check == 'update'}">action="../council/update" method="post"</c:if>>
   <label>Đề tài phản biện</label>
   <div class="form-group row">
     <div class="col-6">
       <%-- load đề tài ra nhé     --%>
       <c:if test = "${check == 'update'}">
-        <input>
+        <input
+                class="form-control"
+                type="text"
+                name=""
+                value="${council.projectStudent.projectLecturers.topic} - ${council.projectStudent.user.username}"
+                required
+                readonly
+        />
+        <input name="projectid" value="${council.id}" hidden>
       </c:if>
       <c:if test = "${check == 'create'}">
       <select class="custom-select" name="projectid" id="">
@@ -34,6 +42,8 @@
               name="numberLecturers"
               value="<c:if test = "${check == 'update'}">${council.numberLecturers}</c:if>"
               required
+              min="2"
+              max="5"
       />
     </div>
     <div class="form-group col-6">
@@ -52,7 +62,8 @@
           class="btn btn-primary d-block position-absolute"
           style="right: 16px"
   >
-    Tạo hội đồng
+    <c:if test = "${check == 'create'}"> Tạo hội đồng</c:if>
+    <c:if test = "${check == 'update'}"> Chỉnh sửa</c:if>
   </button>
 </form>
 <div>
