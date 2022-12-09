@@ -15,6 +15,15 @@ public class ProjectStudentModel {
     private ProjectLecturers projectLecturers;
 
     private String status;
+    private String review;
+
+    public String getReview() {
+        return review;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
+    }
 
     private int point;
 
@@ -67,4 +76,6 @@ public class ProjectStudentModel {
     public void setCreateAt(Date createAt) {
         this.createAt = createAt;
     }
+
 }
+

@@ -14,15 +14,17 @@ import javax.persistence.criteria.CriteriaQuery;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO implements IUserDAO{
+public class UserDAO implements IUserDAO {
+
     @Override
-    public LoginModel login(String username, String password) {
+    public LoginModel login(String username, String password, String role) {
         LoginModel loginModel = new LoginModel();
         User user = new User();
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
-            Query q1 = session.createQuery("from User where username like :s1 and password like :s2");
+            Query q1 = session.createQuery("from User where username like :s1 and password like :s2 and role like :s3");
             q1.setParameter("s1",  username );
             q1.setParameter("s2", password);
+            q1.setParameter("s3", role);
             user = (User) q1.getSingleResult();
             BeanUtils.copyProperties(loginModel, user);
             return loginModel;
@@ -52,6 +54,7 @@ public class UserDAO implements IUserDAO{
         }
     }
 
+    @Override
     public UserModel get(String username) {
         UserModel userModel = new UserModel();
         User user = null;
@@ -67,6 +70,7 @@ public class UserDAO implements IUserDAO{
         return null;
     }
 
+    @Override
     public void delete(String id) {
         Transaction transaction = null;
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
@@ -86,6 +90,7 @@ public class UserDAO implements IUserDAO{
         }
     }
 
+    @Override
     public List<UserModel> getAll() {
         List<UserModel> userModels = new ArrayList<>();
         List<User> users = null;

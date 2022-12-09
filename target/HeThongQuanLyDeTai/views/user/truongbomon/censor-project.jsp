@@ -61,5 +61,14 @@
         </div>
     </div>
 </div>
+<<<<<<< Updated upstream
+=======
+
+<script>
+    function Deny(){
+        window.location.href = "${urlDeny}";
+    }
+</script>
+>>>>>>> Stashed changes
 </body>
 </html>

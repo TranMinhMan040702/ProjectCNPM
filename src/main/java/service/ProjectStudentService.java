@@ -8,6 +8,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.hibernate.Session;
 import utils.HibernateUtils;
 
+
 import java.util.List;
 
 public class ProjectStudentService implements IProjectStudentService {
@@ -38,5 +39,9 @@ public class ProjectStudentService implements IProjectStudentService {
             e.printStackTrace();
         }
         return null;
+    }
+    public void update(ProjectStudentModel projectStudentModel) {
+        ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();
+        projectStudentDAO.update(projectStudentModel);
     }
 }

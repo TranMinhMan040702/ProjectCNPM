@@ -2,7 +2,6 @@ package controllers;
 
 import models.LoginModel;
 import models.UserModel;
-import service.IUserService;
 import service.UserService;
 import utils.SessionUtil;
 
@@ -13,9 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/login", "/logout", "/trang-chu"})
+@WebServlet(urlPatterns = {"/login", "/logout"})
 public class LoginController extends HttpServlet {
-    IUserService userService = new UserService();
+    UserService userService = new UserService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = req.getRequestURL().toString();
@@ -24,17 +23,16 @@ public class LoginController extends HttpServlet {
         } else if (url.contains("logout")) {
             SessionUtil.getInstance().removeValue(req, "USERMODEL");
             resp.sendRedirect(req.getContextPath() + "/home");
-        } else if (url.contains("trang-chu")) {
-            req.getRequestDispatcher("/views/home.jsp").forward(req, resp);
         }
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = req.getRequestURL().toString();
         if (url.contains("login")) {
-            LoginModel model = userService.login(req.getParameter("username"), req.getParameter("password"));
-            UserModel userModel = userService.getUser(model.getUsername());
+            LoginModel model = userService.login(req.getParameter("username"), req.getParameter("password"), req.getParameter("role"));
             if (model != null) {
+                UserModel userModel = userService.getUser(model.getUsername());
                 SessionUtil.getInstance().putValue(req, "USERMODEL", userModel);
                 if (model.getRole().equals("sinhvien")) {
                     resp.sendRedirect(req.getContextPath() + "/sinhvien/home");

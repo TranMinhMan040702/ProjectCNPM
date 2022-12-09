@@ -4,7 +4,9 @@ import dao.ProjectLecturersDAO;
 import dao.ProjectStudentDAO;
 import dao.ReviewDAO;
 import entity.ProjectStudent;
+
 import models.CouncilModel;
+
 import models.ProjectLecturersModel;
 import models.ProjectStudentModel;
 
@@ -13,7 +15,7 @@ import java.util.List;
 public class ReviewService implements IReviewService {
     ReviewDAO reviewDAO = new ReviewDAO();
     @Override
-    public List<CouncilModel> GetListCouncil(String username){
+    public List<ProjectStudentModel> GetList(String username){
         return reviewDAO.GetListProjectReview(username);
     }
 
@@ -28,3 +30,5 @@ public class ReviewService implements IReviewService {
         return reviewDAO.getProjectbyUserName(username);
     }
 }
+
+

@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import service.IUserService;
 import service.UserService;
+
 import utils.HibernateUtils;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -66,24 +67,44 @@ public class ReviewDAO implements IReviewDAO {
         return null;
     }
 
-    @Override // Lấy nhung model Hoi dong có lead này
-    public List<CouncilModel> GetListProjectReview(String username) {
+    // @Override // Lấy nhung model Hoi dong có lead này
+    // public List<CouncilModel> GetListProjectReview(String username) {
+    //     Transaction transaction = null;
+    //     List<CouncilModel> councilModels = new ArrayList<>();
+    //     List<Council> councils = new ArrayList<>();
+    //     try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+    //         transaction = session.beginTransaction();
+    //         String hql = "Select proj From Council as proj Where proj.leader.username = :username";
+    //         councils = session.createQuery(hql).setParameter("username", username).getResultList();
+    //         for(Council coun: councils)
+    //         {
+    //             CouncilModel councilModel = new CouncilModel();
+    //             BeanUtils.copyProperties(councilModel, coun);
+    //             councilModels.add(councilModel);
+    //         }
+    //     } catch (Exception e) {
+    //         e.printStackTrace();
+    //     }
+    //     return councilModels;
+    // }
+    @Override
+    public List<ProjectStudentModel> GetListProjectReview(String username) {
         Transaction transaction = null;
-        List<CouncilModel> councilModels = new ArrayList<>();
-        List<Council> councils = new ArrayList<>();
+        List<ProjectStudentModel> projectStudentModels = new ArrayList<>();
+        List<ProjectStudent> projectStudents = new ArrayList<>();
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            String hql = "Select proj From Council as proj Where proj.leader.username = :username";
-            councils = session.createQuery(hql).setParameter("username", username).getResultList();
-            for(Council coun: councils)
+            String hql = "Select proj From ProjectStudent as proj Where proj.council.lead.user.username = :username";
+            projectStudents = session.createQuery(hql).setParameter("username", username).getResultList();
+            for(ProjectStudent proj: projectStudents)
             {
-                CouncilModel councilModel = new CouncilModel();
-                BeanUtils.copyProperties(councilModel, coun);
-                councilModels.add(councilModel);
+                ProjectStudentModel projmodel = new ProjectStudentModel();
+                BeanUtils.copyProperties(projmodel, proj);
+                projectStudentModels.add(projmodel);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return councilModels;
+        return projectStudentModels;
     }
 }

@@ -47,7 +47,6 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-
                 <h5 class="modal-title" id="">Đánh giá đề tài</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -63,11 +62,13 @@
                         <div class="form-group col-6">
                             <label>Tên đề tài</label>
                             <input id="name" type="text" class="form-control"  required name="topic" value="${projectStudentModel.projectLecturers.topic}" readonly>
+
                         </div>
                         <div class="form-group col-12">
                             <label>Đánh giá</label>
                             <input type="tel" class="form-control" placeholder="Nhập đánh giá" required name="review"
                                    value="${projectStudentModel.reviews}">
+
                         </div>
                         <div class="form-group col-6">
                             <label>Nhập điểm</label>
@@ -92,5 +93,6 @@
         window.location.href = "${urlReview}&username=" + username;
     }
 </script>
+
 </body>
 </html>
