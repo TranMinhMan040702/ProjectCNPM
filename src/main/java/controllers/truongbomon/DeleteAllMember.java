@@ -24,6 +24,7 @@ public class DeleteAllMember extends HttpServlet {
 
         CouncilModel councilModel = councilService.get(idCouncil);
         councilModel.setStatus("Chưa phân công");
+        councilModel.setLeader(null);
         councilService.update(councilModel);
         response.sendRedirect("../council");
     }
