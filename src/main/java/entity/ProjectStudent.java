@@ -26,13 +26,6 @@ public class ProjectStudent {
     @Column
     private String review;
 
-    public Council getCouncil() {
-        return council;
-    }
-
-    public void setCouncil(Council council) {
-        this.council = council;
-    }
 
     public String getReview() {
         return review;
@@ -45,8 +38,6 @@ public class ProjectStudent {
     @Column
     private Date createAt;
 
-<<<<<<< Updated upstream
-=======
     public Council getCouncil() {
         return council;
     }
@@ -55,7 +46,6 @@ public class ProjectStudent {
         this.council = council;
     }
 
->>>>>>> Stashed changes
     @ManyToOne
     private Council council;
 
