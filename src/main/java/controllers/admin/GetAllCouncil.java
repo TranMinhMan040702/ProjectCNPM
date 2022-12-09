@@ -25,6 +25,10 @@ public class GetAllCouncil extends HttpServlet {
         List<CouncilModel> councilModelList = councilService.ListCouncil();
         List<ProjectStudentModel> projectLecturersModels = projectStudentService.GetListByStatusArgument("No", "Đã được duyệt");
         //System.out.println(projectLecturersModels);
+        if(request.getParameter("message") != null){
+            request.setAttribute("message", request.getParameter("message"));
+        }
+
         request.setAttribute("action", "create");
         request.setAttribute("project", projectLecturersModels);
         request.setAttribute("councilList", councilModelList);

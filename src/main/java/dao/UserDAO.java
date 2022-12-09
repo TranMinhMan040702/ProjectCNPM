@@ -150,6 +150,26 @@ public class UserDAO implements IUserDAO{
         return userModels;
     }
 
+    public List<UserModel> getListSearch(String username, String search) {
+        Transaction transaction = null;
+        List<UserModel> userModels = new ArrayList<>();
+        List<User> users = new ArrayList<>();
+        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            String hql = "Select u From User as u Where u.username != :username and u.role = :role and u.fullname like :search";
+            users = session.createQuery(hql).setParameter("username", username).setParameter("role", "giangvien").setParameter("search","%"+search +"%").getResultList();
+            for(User user: users)
+            {
+                UserModel u = new UserModel();
+                BeanUtils.copyProperties(u, user);
+                userModels.add(u);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return userModels;
+    }
+
     public static void main(String[] args) {
         UserDAO userDAO = new UserDAO();
         for(UserModel userModel:userDAO.GetList("10110113")){

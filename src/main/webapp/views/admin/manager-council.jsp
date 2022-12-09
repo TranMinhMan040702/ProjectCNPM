@@ -6,6 +6,31 @@
     <title>Title</title>
 </head>
 <body>
+
+<c:if test="${not empty message and message == 'delete'}">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Xóa thành công</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</c:if>
+<c:if test="${not empty message and message == 'update'}">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Chỉnh sửa thành công</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</c:if>
+<c:if test="${not empty message and message == 'create'}">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Thêm thành công</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</c:if>
 <c:set var = "check" scope = "session" value = "${action}"/>
 <form class="mb-5" <c:if test = "${check == 'create'}"> action="council/create" method="post"</c:if>
         <c:if test="${check == 'update'}">action="../council/update" method="post"</c:if>>

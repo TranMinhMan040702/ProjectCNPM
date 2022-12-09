@@ -14,4 +14,6 @@ public interface IUserDAO {
     List<UserModel> getAll();
 
     List<UserModel> GetList(String username);
+
+    List<UserModel> getListSearch(String username, String search);
 }

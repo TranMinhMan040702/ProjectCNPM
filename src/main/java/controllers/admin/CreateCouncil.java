@@ -50,6 +50,6 @@ public class CreateCouncil extends HttpServlet {
         councilModel.setNumberLecturers(numberLecturers);
         CouncilService councilService = new CouncilService();
         councilService.create(councilModel);
-        response.sendRedirect("../council");
+        response.sendRedirect("../council?message=create");
     }
 }

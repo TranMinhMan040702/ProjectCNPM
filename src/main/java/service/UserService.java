@@ -62,4 +62,8 @@ public class UserService implements IUserService {
     {
         return userDAO.GetList(username);
     }
+    public List<UserModel> getListSearch(String username, String search)
+    {
+        return userDAO.getListSearch(username, search);
+    }
 }

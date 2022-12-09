@@ -17,6 +17,6 @@ public class DeleteCouncil extends HttpServlet {
         int idProject= Integer.parseInt(request.getParameter("idProject"));
         CouncilService councilService = new CouncilService();
         councilService.delete(id,idProject);
-        response.sendRedirect("../council");
+        response.sendRedirect("../council?message=delete");
     }
 }

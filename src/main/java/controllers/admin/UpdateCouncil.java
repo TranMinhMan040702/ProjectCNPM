@@ -48,6 +48,6 @@ public class UpdateCouncil extends HttpServlet {
             throw new RuntimeException(e);
         }
         councilService.update(councilModel);
-        response.sendRedirect("../council");
+        response.sendRedirect("../council?message=update");
     }
 }
