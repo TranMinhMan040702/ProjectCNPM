@@ -7,6 +7,17 @@
 </head>
 <body>
 <div>
+<<<<<<< Updated upstream
+=======
+    <c:if test="${not empty message}">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Không nằm trong thời gian đăng ký</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </c:if>
+>>>>>>> Stashed changes
     <c:set var = "check" scope = "session" value = "${action}"/>
   <h5 class="form-title" style="font-weight: bold">Đăng ký đề tài</h5>
     <form <c:if test = "${check == 'create'}"> action="registration/create" method="post" </c:if>

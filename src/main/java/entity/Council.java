@@ -52,6 +52,17 @@ public class Council {
     }
 
 
+    @OneToMany(mappedBy = "council", cascade = CascadeType.ALL)
+    private List<ProjectStudent> projectStudents;
+
+    public List<ProjectStudent> getProjectStudents() {
+        return projectStudents;
+    }
+
+    public void setProjectStudents(List<ProjectStudent> projectStudents) {
+        this.projectStudents = projectStudents;
+    }
+
     public int getNumberLecturers() {
         return numberLecturers;
     }

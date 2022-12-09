@@ -54,7 +54,11 @@ public class ReviewDAO implements IReviewDAO {
         List<ProjectStudent> projectStudents = new ArrayList<>();
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
+<<<<<<< Updated upstream
             String hql = "Select proj From ProjectStudent as proj Where proj.council.lead.user.username = :username";
+=======
+            String hql = "Select proj From ProjectStudent as proj Where proj.council..user.username = :username";
+>>>>>>> Stashed changes
             projectStudents = session.createQuery(hql).setParameter("username", username).getResultList();
             for(ProjectStudent proj: projectStudents)
             {

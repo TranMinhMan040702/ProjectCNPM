@@ -45,6 +45,17 @@ public class ProjectStudent {
     @Column
     private Date createAt;
 
+<<<<<<< Updated upstream
+=======
+    public Council getCouncil() {
+        return council;
+    }
+
+    public void setCouncil(Council council) {
+        this.council = council;
+    }
+
+>>>>>>> Stashed changes
     @ManyToOne
     private Council council;
 
