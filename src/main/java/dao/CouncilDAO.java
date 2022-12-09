@@ -8,6 +8,7 @@ import models.CouncilModel;
 import models.ProjectStudentModel;
 import models.RegistrationPeriodModel;
 import models.UserModel;
+
 import org.apache.commons.beanutils.BeanUtils;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -18,6 +19,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class CouncilDAO {
     public void create(CouncilModel councilModel){
@@ -41,6 +43,7 @@ public class CouncilDAO {
             }
         }
     }
+
     public List<CouncilModel> getAll() {
         List<CouncilModel> councilModels = new ArrayList<>();
         List<Council> councils = null;
