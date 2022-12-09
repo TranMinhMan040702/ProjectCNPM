@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ProjectCNPM" />
         <module name="ProjectCNPM-master" />
+        <module name="PROJCNPM" />
       </profile>
     </annotationProcessing>
   </component>

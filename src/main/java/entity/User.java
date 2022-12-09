@@ -150,28 +150,4 @@ public class User {
     public void setProjectLecturers(List<ProjectLecturers> projectLecturers) {
         this.projectLecturers = projectLecturers;
     }
-
-    public List<ProjectStudent> getProjectStudents() {
-        return projectStudents;
-    }
-
-    public void setProjectStudents(List<ProjectStudent> projectStudents) {
-        this.projectStudents = projectStudents;
-    }
-
-    public List<StudentGroup> getStudentGroups() {
-        return studentGroups;
-    }
-
-    public void setStudentGroups(List<StudentGroup> studentGroups) {
-        this.studentGroups = studentGroups;
-    }
-
-    public List<MemberCouncil> getMemberCouncils() {
-        return memberCouncils;
-    }
-
-    public void setMemberCouncils(List<MemberCouncil> memberCouncils) {
-        this.memberCouncils = memberCouncils;
-    }
 }

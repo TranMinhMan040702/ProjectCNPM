@@ -49,5 +49,4 @@ public class ProjectStudentService implements IProjectStudentService {
         ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();
         projectStudentDAO.update(projectStudentModel);
     }
-
 }
