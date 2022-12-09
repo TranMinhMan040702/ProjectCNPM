@@ -62,7 +62,7 @@
     <div class="d-flex justify-content-between">
         <h5 style="font-weight: bold">Danh sách sinh viên</h5>
         <div class="d-flex justify-content-center align-items-center">
-            <h6 style="font-weight: bold">Tìm kiếm GV</h6>
+            <h6 style="font-weight: bold">Tìm kiếm SV</h6>
             <form class="form-inline" style="margin-bottom: 5px; margin-left: 10px">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
