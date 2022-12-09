@@ -25,6 +25,8 @@ public class UserController extends HttpServlet {
             req.getRequestDispatcher("/views/user/giangvien/project-registration.jsp").forward(req, resp);
         } else if (url.contains("/truongbomon/duyetdetai")) {
             req.getRequestDispatcher("/views/user/truongbomon/censor-project.jsp").forward(req, resp);
+        } else if (url.contains("/giangvien/review")) {
+            req.getRequestDispatcher("/views/user/truongbomon/review.jsp").forward(req, resp);
         }
     }
 }
