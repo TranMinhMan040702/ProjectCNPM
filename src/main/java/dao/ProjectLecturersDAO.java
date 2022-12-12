@@ -9,6 +9,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import utils.HibernateUtils;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -56,12 +58,12 @@ public class ProjectLecturersDAO implements IProjectLecturersDAO{
         }
     }
 
-    public ProjectLecturersModel get(int user) {
+    public ProjectLecturersModel get(int id) {
         ProjectLecturersModel projectLecturersModel = new ProjectLecturersModel();
         ProjectLecturers projectLecturers = null;
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
 
-            projectLecturers = session.get(ProjectLecturers.class, user);
+            projectLecturers = session.get(ProjectLecturers.class, id);
             BeanUtils.copyProperties(projectLecturersModel, projectLecturers);
             return  projectLecturersModel;
 
@@ -126,7 +128,27 @@ public class ProjectLecturersDAO implements IProjectLecturersDAO{
         }
         return projectLecturersModels;
     }
+    public List<ProjectLecturersModel> getAll() {
+        List<ProjectLecturersModel> projectLecturersModels = new ArrayList<>();
+        List<ProjectLecturers> projectLecturers = null;
+        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<ProjectLecturers> criteriaQuery = builder.createQuery(ProjectLecturers.class);
+            criteriaQuery.from(ProjectLecturers.class);
+            projectLecturers = session.createQuery(criteriaQuery).getResultList();
+            for(ProjectLecturers s: projectLecturers){
+                ProjectLecturersModel projectLecturersModel = new ProjectLecturersModel();
+                BeanUtils.copyProperties(projectLecturersModel, s);
+                projectLecturersModels.add(projectLecturersModel);
+            }
 
+            return projectLecturersModels;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
     public static void main(String[] args) {
         ProjectLecturersDAO projectLecturersDAO = new ProjectLecturersDAO();
         List<ProjectLecturersModel> projectLecturersModel = projectLecturersDAO.GetListDepartment("Công nghệ thông tin");

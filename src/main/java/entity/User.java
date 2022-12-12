@@ -50,7 +50,11 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<StudentGroup> studentGroups;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<MemberCouncil> memberCouncils;
 
+    @OneToMany(mappedBy = "leader", cascade = CascadeType.ALL)
+    private List<Council> councils;
     public String getUsername(){
         return username;
     }
@@ -145,21 +149,5 @@ public class User {
 
     public void setProjectLecturers(List<ProjectLecturers> projectLecturers) {
         this.projectLecturers = projectLecturers;
-    }
-
-    public List<ProjectStudent> getProjectStudents() {
-        return projectStudents;
-    }
-
-    public void setProjectStudents(List<ProjectStudent> projectStudents) {
-        this.projectStudents = projectStudents;
-    }
-
-    public List<StudentGroup> getStudentGroups() {
-        return studentGroups;
-    }
-
-    public void setStudentGroups(List<StudentGroup> studentGroups) {
-        this.studentGroups = studentGroups;
     }
 }

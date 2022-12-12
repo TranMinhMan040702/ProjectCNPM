@@ -2,7 +2,6 @@ package controllers;
 
 import models.LoginModel;
 import models.UserModel;
-import service.IUserService;
 import service.UserService;
 import utils.SessionUtil;
 
@@ -15,7 +14,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = {"/login", "/logout"})
 public class LoginController extends HttpServlet {
-    IUserService userService = new UserService();
+    UserService userService = new UserService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = req.getRequestURL().toString();

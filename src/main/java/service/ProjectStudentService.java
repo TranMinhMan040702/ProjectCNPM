@@ -17,6 +17,8 @@ public class ProjectStudentService implements IProjectStudentService {
         ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();
         return projectStudentDAO.GetList(department);
     }
+
+
     public void create(ProjectStudentModel projectStudentModel)
     {
         ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();
@@ -26,19 +28,14 @@ public class ProjectStudentService implements IProjectStudentService {
         ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();
         return projectStudentDAO.Get(user);
     }
-    public ProjectStudentModel getStudent(int ID) {
-        ProjectStudentModel projectStudentModel = new ProjectStudentModel();
-        ProjectStudent projectStudent = null;
-        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
 
-            projectStudent = session.get(ProjectStudent.class, ID);
-            BeanUtils.copyProperties(projectStudentModel, projectStudent);
-            return  projectStudentModel;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+    public List<ProjectStudentModel> GetListByStatusArgument(String StatusArgument, String status){
+        ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();
+        return projectStudentDAO.GetListByStatusArgument(StatusArgument, status);
+    }
+    public ProjectStudentModel getStudent(int id) {
+        ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();
+        return projectStudentDAO.getById(id);
     }
     public void update(ProjectStudentModel projectStudentModel) {
         ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();

@@ -14,7 +14,7 @@ public class MemberCouncil {
     private Council council;
 
     @ManyToOne
-    private ProjectLecturers projectLecturers;
+    private User user;
 
     public int getId() {
         return id;
@@ -32,11 +32,10 @@ public class MemberCouncil {
         this.council = council;
     }
 
-    public ProjectLecturers getProjectLecturers() {
-        return projectLecturers;
+    public User getUser() {
+        return user;
     }
-
-    public void setProjectLecturers(ProjectLecturers projectLecturers) {
-        this.projectLecturers = projectLecturers;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

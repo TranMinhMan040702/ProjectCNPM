@@ -64,6 +64,7 @@ public class RegisterProjectStudent extends HttpServlet {
             throw new RuntimeException(e);
         }
         projectStudentModel.setStatus("Chưa được duyệt");
+        projectStudentModel.setStatusArgument("No");
         projectStudentModel.setUser(user);
         projectStudentModel.setProjectLecturers(projectLecturers);
 

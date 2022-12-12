@@ -33,11 +33,6 @@ public class ProjectLecturers {
     @OneToMany(mappedBy = "projectLecturers", cascade = CascadeType.ALL)
     private List<ProjectStudent> projectStudents;
 
-    @OneToMany(mappedBy = "projectLecturers", cascade = CascadeType.ALL)
-    private List<Council> councils;
-
-    @OneToMany(mappedBy = "projectLecturers", cascade = CascadeType.ALL)
-    private List<MemberCouncil> memberCouncils;
     public int getId() {
         return id;
     }
@@ -103,19 +98,5 @@ public class ProjectLecturers {
         this.request = request;
     }
 
-    public List<Council> getCouncils() {
-        return councils;
-    }
 
-    public void setCouncils(List<Council> councils) {
-        this.councils = councils;
-    }
-
-    public List<MemberCouncil> getMemberCouncils() {
-        return memberCouncils;
-    }
-
-    public void setMemberCouncils(List<MemberCouncil> memberCouncils) {
-        this.memberCouncils = memberCouncils;
-    }
 }
