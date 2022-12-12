@@ -9,6 +9,6 @@ public class Main {
         List<UserModel> userModels = userService.getAllUser();
         for (UserModel userModel : userModels) {
             System.out.println("Name: " + userModel.getFullname());
-        }
+        }   
     }
 }

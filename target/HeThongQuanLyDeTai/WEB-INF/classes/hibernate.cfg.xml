@@ -25,6 +25,9 @@
         <mapping class="entity.RegistrationPeriod" />
         <mapping class="entity.ProjectLecturers" />
         <mapping class="entity.ProjectStudent" />
+        <mapping class="entity.Council" />
+        <mapping class="entity.MemberCouncil" />
+        <mapping class="entity.StudentGroup" />
 
     </session-factory>
 </hibernate-configuration>
