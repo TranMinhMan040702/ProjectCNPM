@@ -31,7 +31,7 @@ public class CreateRegistrationPeriod extends HttpServlet {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        String username = SessionUtil.getInstance().getValue(req, "").toString();
+        String username = SessionUtil.getInstance().getValue(req, "USERMODEL").toString();
         System.out.println(username);
         registrationPeriodModel.setRole(req.getParameter("role"));
         registrationPeriodService.create(registrationPeriodModel);

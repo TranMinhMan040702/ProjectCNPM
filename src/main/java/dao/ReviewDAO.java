@@ -88,23 +88,23 @@ public class ReviewDAO implements IReviewDAO {
     //     return councilModels;
     // }
     @Override
-    public List<ProjectStudentModel> GetListProjectReview(String username) {
+    public List<CouncilModel> GetListProjectReview(String username) {
         Transaction transaction = null;
-        List<ProjectStudentModel> projectStudentModels = new ArrayList<>();
-        List<ProjectStudent> projectStudents = new ArrayList<>();
+        List<CouncilModel> councilModels = new ArrayList<>();
+        List<Council> councils = new ArrayList<>();
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            String hql = "Select proj From ProjectStudent as proj Where proj.council.lead.user.username = :username";
-            projectStudents = session.createQuery(hql).setParameter("username", username).getResultList();
-            for(ProjectStudent proj: projectStudents)
-            {
-                ProjectStudentModel projmodel = new ProjectStudentModel();
-                BeanUtils.copyProperties(projmodel, proj);
-                projectStudentModels.add(projmodel);
+            String hql = "Select proj From Council as proj Where proj.leader.username = :username";
+            councils = session.createQuery(hql).setParameter("username", username).getResultList();
+            for (Council coun : councils) {
+                CouncilModel councilModel = new CouncilModel();
+                BeanUtils.copyProperties(councilModel, coun);
+                councilModels.add(councilModel);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return projectStudentModels;
+        return councilModels;
     }
+
 }

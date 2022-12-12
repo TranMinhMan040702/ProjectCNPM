@@ -12,5 +12,7 @@ public interface IReviewDAO {
     ProjectStudentModel getProjectbyUserName(String username); // Lấy nhung model Hoi dong có lead này
 
     List<CouncilModel> GetListProjectReview(String username);
-    ProjectStudentModel get(int Id);
+
+
+    //List<CouncilModel> GetListProjectReview(String username);
 }

@@ -14,9 +14,14 @@ import java.util.List;
 
 public class ReviewService implements IReviewService {
     ReviewDAO reviewDAO = new ReviewDAO();
+//    @Override
+//    public List<ProjectStudentModel> GetList(String username){
+//        return reviewDAO.GetListProjectReview(username);
+//    }
+
     @Override
-    public List<ProjectStudentModel> GetList(String username){
-        return reviewDAO.GetListProjectReview(username);
+    public List<CouncilModel> GetListCouncil(String username) {
+        return  reviewDAO.GetListProjectReview(username);
     }
 
     @Override
@@ -29,6 +34,7 @@ public class ReviewService implements IReviewService {
         ReviewDAO reviewDAO = new ReviewDAO();
         return reviewDAO.getProjectbyUserName(username);
     }
+
 }
 
 

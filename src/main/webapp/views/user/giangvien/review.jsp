@@ -30,7 +30,8 @@
             <td>${proj.projectLecturers.topic}</td>
             <td>${proj.projectLecturers.department}</td>
             <td>
-                <button class="" id="${proj.user.username}" onclick="loadStudent(event)"
+                <c:set var="topic" value="${proj.projectLecturers.topic}" />
+                <button class="btn btn-primary" onclick="loadStudent('${proj.user.username}','${proj.projectLecturers.topic}', ${proj.id})"
                    data-toggle="modal" data-target="#danh-gia">
                     Đánh giá
                 </button>
@@ -42,7 +43,6 @@
 </div>
 <!-- Modal đánh giá-->
 
-<form action="review/at" method="post" >
 
 <div class="modal fade" id="danh-gia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
@@ -55,42 +55,43 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="review/create" method="post">
                     <div class="row">
                         <div class="form-group col-6">
-                            <label>MS Đề tài</label>
-                            <input id="a" type="text" class="form-control" required name="username" value="${projectStudentModel.user.username}" readonly>
+                            <input hidden id="idProjectStudent" name="idProject" value="">
+                            <label>MSV</label>
+                            <input id="username" type="text" class="form-control" required name="username" value="" readonly>
                         </div>
                         <div class="form-group col-6">
                             <label>Tên đề tài</label>
-                            <input id="name" type="text" class="form-control"  required name="topic" value="${projectStudentModel.projectLecturers.topic}" readonly>
+                            <input id="topic" type="text" class="form-control"  required name="topic" value="" readonly>
                         </div>
                         <div class="form-group col-12">
                             <label>Đánh giá</label>
                             <input type="tel" class="form-control" placeholder="Nhập đánh giá" required name="review"
-                                   value="${projectStudentModel.reviews}">
+                                   value="">
                         </div>
                         <div class="form-group col-6">
                             <label>Nhập điểm</label>
-                            <input type="tel" class="form-control" placeholder="Nhập điểm" required name="scores"
-                                   value="${projectStudentModel.point}">
+                            <input type="number" class="form-control" placeholder="Nhập điểm" required name="point"
+                                   value="">
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                        <button type="button" class="btn btn-primary">Gửi</button>
+                        <button type="submit" class="btn btn-primary">Gửi</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-</form>
 <c:url value="/giangvien/review?action=review" var="urlReview"/>
 <script>
-    function loadStudent(e) {
-        const username = e.target.id;
-        window.location.href = "${urlReview}&username=" + username;
+    function loadStudent(username, topic, id) {
+        document.getElementById("username").value = username;
+        document.getElementById("topic").value = topic;
+        document.getElementById("idProjectStudent").value = id;
     }
 </script>
 </body>
