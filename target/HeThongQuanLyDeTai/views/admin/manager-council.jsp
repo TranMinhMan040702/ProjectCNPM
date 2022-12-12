@@ -6,7 +6,6 @@
     <title>Title</title>
 </head>
 <body>
-
 <c:if test="${not empty message and message == 'delete'}">
   <div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>Xóa thành công</strong>
