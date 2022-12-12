@@ -19,12 +19,15 @@
         <property name="hibernate.connection.useUnicode">true</property>
         <!-- Disable the second-level cache -->
         <property name="cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
         <mapping class="entity.User" />
         <mapping class="entity.RegistrationPeriod" />
         <mapping class="entity.ProjectLecturers" />
         <mapping class="entity.ProjectStudent" />
+        <mapping class="entity.Council" />
+        <mapping class="entity.MemberCouncil" />
+        <mapping class="entity.StudentGroup" />
 
     </session-factory>
 </hibernate-configuration>

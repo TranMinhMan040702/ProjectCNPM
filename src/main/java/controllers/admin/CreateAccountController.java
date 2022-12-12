@@ -1,9 +1,11 @@
 package controllers.admin;
 
 import models.UserModel;
+
 import org.apache.commons.beanutils.BeanUtils;
 
 import service.IUserService;
+
 import service.UserService;
 
 import javax.servlet.ServletException;
@@ -19,10 +21,11 @@ import java.util.Date;
 
 @WebServlet(urlPatterns = "/admin/create")
 public class CreateAccountController extends HttpServlet {
-    IUserService userService = new UserService();
+    UserService userService = new UserService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/views/admin/create-account.jsp").forward(req, resp);
+
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

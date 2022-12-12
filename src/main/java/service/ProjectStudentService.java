@@ -26,6 +26,11 @@ public class ProjectStudentService implements IProjectStudentService {
         ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();
         return projectStudentDAO.Get(user);
     }
+
+    public List<ProjectStudentModel> GetListByStatusArgument(String StatusArgument, String status){
+        ProjectStudentDAO projectStudentDAO = new ProjectStudentDAO();
+        return projectStudentDAO.GetListByStatusArgument(StatusArgument, status);
+    }
     public ProjectStudentModel getStudent(int ID) {
         ProjectStudentModel projectStudentModel = new ProjectStudentModel();
         ProjectStudent projectStudent = null;

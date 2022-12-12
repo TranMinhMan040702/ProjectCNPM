@@ -26,13 +26,16 @@ public class ProjectLecturersService implements IProjectLecturersService{
     public List<ProjectLecturersModel> GetList(String username){
          return projectLecturersDAO.GetList(username);
     }
+    public List<ProjectLecturersModel> GetAll(){
+        return projectLecturersDAO.getAll();
+    }
     @Override
     public List<ProjectLecturersModel> GetListDepartment(String department){
         return projectLecturersDAO.GetListDepartment(department);
     }
-    public ProjectLecturersModel getUser(int user)
+    public ProjectLecturersModel getUser(int id)
     {
-        return projectLecturersDAO.get(user);
+        return projectLecturersDAO.get(id);
     }
     public void update(ProjectLecturersModel projectLecturersModel){
         projectLecturersDAO.update(projectLecturersModel);

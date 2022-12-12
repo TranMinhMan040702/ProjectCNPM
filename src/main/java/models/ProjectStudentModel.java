@@ -18,6 +18,10 @@ public class ProjectStudentModel {
 
     private int point;
 
+    private  String reviews;
+
+    private String statusArgument;
+
     private Date createAt;
 
     public int getId() {
@@ -68,5 +72,19 @@ public class ProjectStudentModel {
         this.createAt = createAt;
     }
 
-}
+    public String getReviews() {
+        return reviews;
+    }
 
+    public void setReviews(String reviews) {
+        this.reviews = reviews;
+    }
+
+    public String getStatusArgument() {
+        return statusArgument;
+    }
+
+    public void setStatusArgument(String statusArgument) {
+        this.statusArgument = statusArgument;
+    }
+}
