@@ -60,7 +60,11 @@ public class RegisterProjectLecturers extends HttpServlet {
 
         RegistrationPeriodService registrationPeriodService = new RegistrationPeriodService();
         RegistrationPeriodModel registrationPeriodModel = registrationPeriodService.getByRole(userModel.getRole());
-        if ((date2.after(registrationPeriodModel.getStartday()) && date2.before(registrationPeriodModel.getEndday())) && registrationPeriodModel != null)
+
+        if(registrationPeriodModel == null){
+            response.sendRedirect(request.getContextPath()+"/giangvien/registration?message=register_error");
+        }
+        else if ((date2.after(registrationPeriodModel.getStartday()) && date2.before(registrationPeriodModel.getEndday())) && registrationPeriodModel != null)
         {
             projectLecturersService.create(projectLecturersModel);
             response.sendRedirect(request.getContextPath()+"/giangvien/registration");

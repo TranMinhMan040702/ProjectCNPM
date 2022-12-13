@@ -15,9 +15,9 @@ public interface IUserDAO {
     void delete(String id);
 
     List<UserModel> getAll();
-    List<UserModel> GetList(String username);
+    List<UserModel> GetList(String username, String department);
 
-    List<UserModel> getListSearch(String username, String search);
+    List<UserModel> getListSearch(String username, String search, String department);
     void update(UserModel userModel);
 
 }

@@ -35,5 +35,5 @@ public class BrowseProjectService implements IBrowseProjectService {
         browseProjectDAO.update(projectStudent);
         response.sendRedirect("../browse_project");
     }
-    public List<ProjectStudentModel> getAllProjectStudentModels(){return browseProjectDAO.getAll();}
+    public List<ProjectStudentModel> getAllProjectStudentModels(String department){return browseProjectDAO.getAll(department);}
 }

@@ -135,14 +135,14 @@ public class UserDAO implements IUserDAO {
     }
 
     @Override
-    public List<UserModel> GetList(String username) {
+    public List<UserModel> GetList(String username, String department) {
         Transaction transaction = null;
         List<UserModel> userModels = new ArrayList<>();
         List<User> users = new ArrayList<>();
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            String hql = "Select u From User as u Where u.username != :username and u.role = :role";
-            users = session.createQuery(hql).setParameter("username", username).setParameter("role", "giangvien").getResultList();
+            String hql = "Select u From User as u Where u.username != :username and u.department= :department and u.role = :role";
+            users = session.createQuery(hql).setParameter("username", username).setParameter("department", department).setParameter("role", "giangvien").getResultList();
             for(User user: users)
             {
                 UserModel u = new UserModel();
@@ -155,14 +155,14 @@ public class UserDAO implements IUserDAO {
         return userModels;
     }
 
-    public List<UserModel> getListSearch(String username, String search) {
+    public List<UserModel> getListSearch(String username, String search, String department) {
         Transaction transaction = null;
         List<UserModel> userModels = new ArrayList<>();
         List<User> users = new ArrayList<>();
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            String hql = "Select u From User as u Where u.username != :username and u.role = :role and u.fullname like :search";
-            users = session.createQuery(hql).setParameter("username", username).setParameter("role", "giangvien").setParameter("search","%"+search +"%").getResultList();
+            String hql = "Select u From User as u Where u.username != :username and u.role = :role and u.department= :department and u.fullname like :search";
+            users = session.createQuery(hql).setParameter("username", username).setParameter("role", "giangvien").setParameter("department", department).setParameter("search","%"+search +"%").getResultList();
             for(User user: users)
             {
                 UserModel u = new UserModel();
@@ -176,9 +176,9 @@ public class UserDAO implements IUserDAO {
     }
 
     public static void main(String[] args) {
-        UserDAO userDAO = new UserDAO();
-        for(UserModel userModel:userDAO.GetList("10110113")){
-            System.out.println(userModel.getUsername());
-        }
+//        UserDAO userDAO = new UserDAO();
+//        for(UserModel userModel:userDAO.GetList("10110113")){
+//            System.out.println(userModel.getUsername());
+//        }
     }
 }
