@@ -5,6 +5,7 @@ import models.UserModel;
 import service.BrowseProjectService;
 import service.ProjectStudentService;
 import service.UserService;
+import utils.SessionUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,8 +22,9 @@ public class GetAllProjectStudents extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        UserModel userModel = (UserModel) SessionUtil.getInstance().getValue(request,"USERMODEL");
         BrowseProjectService browseProjectService = new BrowseProjectService();
-        List<ProjectStudentModel> projectStudentModelList = browseProjectService.getAllProjectStudentModels();
+        List<ProjectStudentModel> projectStudentModelList = browseProjectService.getAllProjectStudentModels(userModel.getDepartment());
         request.setAttribute("projectStudentModelList", projectStudentModelList);
         request.getRequestDispatcher("../views/user/truongbomon/censor-project.jsp").forward(request, response);
     }

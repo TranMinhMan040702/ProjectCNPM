@@ -71,14 +71,25 @@ public class RegisterProjectStudent extends HttpServlet {
         ProjectStudentService projectStudentService = new ProjectStudentService();
 
         RegistrationPeriodService registrationPeriodService = new RegistrationPeriodService();
+
         RegistrationPeriodModel registrationPeriodModel = registrationPeriodService.getByRole(userModel.getRole());
-        if ((date2.after(registrationPeriodModel.getStartday()) && date2.before(registrationPeriodModel.getEndday())) && registrationPeriodModel != null)
+        if(registrationPeriodModel == null) {
+
+        }
+        if(registrationPeriodModel == null)
         {
+            response.sendRedirect(request.getContextPath()+"/sinhvien/registration/change?message=register_error");
+        }
+        else if ((date2.after(registrationPeriodModel.getStartday()) && date2.before(registrationPeriodModel.getEndday())) && registrationPeriodModel != null)
+        {
+            System.out.println("ngahsgas");
             projectStudentService.create(projectStudentModel);
             response.sendRedirect(request.getContextPath()+"/sinhvien/registration/change");
         }
         else {
+            System.out.println("111111");
             response.sendRedirect(request.getContextPath()+"/sinhvien/registration/change?message=register_error");
         }
+
     }
 }

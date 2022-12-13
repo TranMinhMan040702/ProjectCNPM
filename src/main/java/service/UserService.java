@@ -58,12 +58,12 @@ public class UserService implements IUserService {
     @Override
     public List<UserModel> getAllUser(){return userDAO.getAll();}
 
-    public List<UserModel> getLecturers(String username)
+    public List<UserModel> getLecturers(String username, String department)
     {
-        return userDAO.GetList(username);
+        return userDAO.GetList(username, department);
     }
-    public List<UserModel> getListSearch(String username, String search)
+    public List<UserModel> getListSearch(String username, String search, String department)
     {
-        return userDAO.getListSearch(username, search);
+        return userDAO.getListSearch(username, search, department);
     }
 }

@@ -14,7 +14,6 @@ public class SearchMemberCouncil extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         int id = Integer.parseInt(request.getParameter("id"));
         String search = request.getParameter("search");
-        System.out.println(search);
         response.sendRedirect("../council/create?id="+id+"&action=search&search=" +search);
     }
 }

@@ -12,5 +12,5 @@ import java.util.List;
 public interface IBrowseProjectService {
     void update(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException;
-    List<ProjectStudentModel> getAllProjectStudentModels();
+    List<ProjectStudentModel> getAllProjectStudentModels(String department);
 }

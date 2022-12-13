@@ -8,6 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CouncilService implements ICouncilService{
+    public List<CouncilModel> ListCouncil(String department){
+        List<CouncilModel> councilModels = new ArrayList<>();
+        CouncilDAO councilDAO = new CouncilDAO();
+        councilModels = councilDAO.getAll(department);
+        return councilModels;
+    }
     public List<CouncilModel> ListCouncil(){
         List<CouncilModel> councilModels = new ArrayList<>();
         CouncilDAO councilDAO = new CouncilDAO();

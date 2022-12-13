@@ -9,6 +9,7 @@ import org.apache.commons.beanutils.BeanUtils;
 import service.CouncilService;
 import service.MemBerCouncilService;
 import service.UserService;
+import utils.SessionUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,6 +25,7 @@ public class CreateMemberCouncil extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        UserModel userModel = (UserModel) SessionUtil.getInstance().getValue(request,"USERMODEL");
         String message = request.getParameter("message");
         int id;
         if(request.getParameter("id") != null){
@@ -46,14 +48,13 @@ public class CreateMemberCouncil extends HttpServlet {
         memberCouncilModels = memBerCouncilService.getList(id);
 
         UserService userService = new UserService();
-        List<UserModel> lecturersList = userService.getLecturers(idLecturers);
+        List<UserModel> lecturersList = userService.getLecturers(idLecturers, userModel.getDepartment());
         if(action != null ){
             String search =request.getParameter("search");
-            System.out.println("1213131");
-            lecturersList = userService.getListSearch(idLecturers, search);
+            lecturersList = userService.getListSearch(idLecturers, search, userModel.getDepartment());
         }
         else {
-            lecturersList = userService.getLecturers(idLecturers);
+            lecturersList = userService.getLecturers(idLecturers, userModel.getDepartment());
         }
 
         int number = memBerCouncilService.count(id);

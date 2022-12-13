@@ -44,6 +44,26 @@ public class CouncilDAO {
         }
     }
 
+    public List<CouncilModel> getAll(String department) {
+        List<CouncilModel> councilModels = new ArrayList<>();
+        List<Council> councils = null;
+        Transaction transaction = null;
+        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            String hql = "Select c From Council as c Where c.projectStudent.projectLecturers.department = :department ";
+            councils = session.createQuery(hql).setParameter("department", department).getResultList();
+            for(Council council: councils) {
+                CouncilModel c = new CouncilModel();
+                BeanUtils.copyProperties(c, council);
+                councilModels.add(c);
+            }
+            return councilModels;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public List<CouncilModel> getAll() {
         List<CouncilModel> councilModels = new ArrayList<>();
         List<Council> councils = null;
@@ -65,6 +85,7 @@ public class CouncilDAO {
 
         return null;
     }
+
     public void delete(int id, int idProject) {
         Transaction transaction = null;
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
