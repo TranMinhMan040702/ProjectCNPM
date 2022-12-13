@@ -82,14 +82,11 @@ public class RegisterProjectStudent extends HttpServlet {
         }
         else if ((date2.after(registrationPeriodModel.getStartday()) && date2.before(registrationPeriodModel.getEndday())) && registrationPeriodModel != null)
         {
-            System.out.println("ngahsgas");
             projectStudentService.create(projectStudentModel);
             response.sendRedirect(request.getContextPath()+"/sinhvien/registration/change");
         }
         else {
-            System.out.println("111111");
             response.sendRedirect(request.getContextPath()+"/sinhvien/registration/change?message=register_error");
         }
-
     }
 }

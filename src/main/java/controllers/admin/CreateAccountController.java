@@ -32,8 +32,6 @@ public class CreateAccountController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         UserModel userModel = new UserModel();
         try {
-            //BeanUtils.populate(userModel, req.getParameterMap());
-
             userModel.setUsername(request.getParameter("username"));
             userModel.setPassword(request.getParameter("password"));
             userModel.setFullname(request.getParameter("fullname"));

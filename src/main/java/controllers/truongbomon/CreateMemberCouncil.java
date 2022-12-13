@@ -35,13 +35,9 @@ public class CreateMemberCouncil extends HttpServlet {
         {
             id =  Integer.parseInt(request.getParameter("idCouncil"));
         }
-
         CouncilService councilService = new CouncilService();
         CouncilModel councilModel = councilService.get(id);
         String idLecturers = councilModel.getProjectStudent().getProjectLecturers().getUser().getUsername();
-
-
-
         MemBerCouncilService memBerCouncilService = new MemBerCouncilService();
         String action =request.getParameter("action");
         List<MemberCouncilModel> memberCouncilModels;
@@ -63,7 +59,6 @@ public class CreateMemberCouncil extends HttpServlet {
         {
             number = number + 1;
         }
-
         request.setAttribute("message",message);
         request.setAttribute("memberCouncilModels", memberCouncilModels);
         request.setAttribute("number",number);

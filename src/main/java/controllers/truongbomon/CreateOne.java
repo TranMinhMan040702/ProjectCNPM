@@ -22,9 +22,7 @@ import java.lang.reflect.InvocationTargetException;
 public class CreateOne extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         int idCouncil = Integer.parseInt(request.getParameter("idCouncil"));
-
         CouncilService councilService = new CouncilService();
         CouncilModel councilModel = councilService.get(idCouncil);
         String username = request.getParameter("username");
@@ -57,7 +55,6 @@ public class CreateOne extends HttpServlet {
         {
             check = councilModel.getLeader().getUsername();
         }
-        System.out.println(check);
         if(memBerCouncilService.check(idCouncil,username) > 0 || username.equals(check)){
             response.sendRedirect("../create?idCouncil="+idCouncil+"&message=danger");
         }

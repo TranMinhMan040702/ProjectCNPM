@@ -30,6 +30,5 @@ public class ProjectLecturers extends HttpServlet {
             request.setAttribute("message", message);
         }
         request.getRequestDispatcher("/views/user/giangvien/project-registration.jsp").forward(request, response);
-
     }
 }

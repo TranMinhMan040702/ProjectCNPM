@@ -18,9 +18,7 @@ public class deleteMember extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         int idCouncil = Integer.parseInt(request.getParameter("idCouncil"));
-        System.out.println("Toi fasfaf");
         if(request.getParameter("leader").equals("yes")){
-            System.out.println("Toi day");
             CouncilService councilService = new CouncilService();
             CouncilModel councilModel = councilService.get(idCouncil);
             councilModel.setLeader(null);
